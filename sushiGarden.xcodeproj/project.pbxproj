@@ -16,6 +16,12 @@
 		73ED7FC42C2424B600F84EBC /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FC32C2424B600F84EBC /* MainPresenter.swift */; };
 		73ED7FC72C24263E00F84EBC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FC62C24263E00F84EBC /* Constants.swift */; };
 		73ED7FCA2C24268800F84EBC /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FC92C24268800F84EBC /* UIColor+Ext.swift */; };
+		73ED7FCC2C24289600F84EBC /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FCB2C24289600F84EBC /* BaseVC.swift */; };
+		73ED7FCF2C2429B600F84EBC /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FCE2C2429B600F84EBC /* RegistrationVC.swift */; };
+		73ED7FD22C242DEB00F84EBC /* Sen-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73ED7FD12C242C8A00F84EBC /* Sen-VariableFont_wght.ttf */; };
+		73ED7FD42C24321B00F84EBC /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FD32C24321B00F84EBC /* UIView+Ext.swift */; };
+		73ED7FD72C2438D600F84EBC /* RegistrationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FD62C2438D600F84EBC /* RegistrationStackView.swift */; };
+		73ED7FD92C24796B00F84EBC /* EnterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FD82C24796B00F84EBC /* EnterVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		73ED7FC32C2424B600F84EBC /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		73ED7FC62C24263E00F84EBC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		73ED7FC92C24268800F84EBC /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		73ED7FCB2C24289600F84EBC /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		73ED7FCE2C2429B600F84EBC /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		73ED7FD12C242C8A00F84EBC /* Sen-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sen-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		73ED7FD32C24321B00F84EBC /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		73ED7FD62C2438D600F84EBC /* RegistrationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationStackView.swift; sourceTree = "<group>"; };
+		73ED7FD82C24796B00F84EBC /* EnterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,7 @@
 		73D989D92C2423B70086484B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				73ED7FCD2C2429A400F84EBC /* Registration */,
 				73D989C82C2423950086484B /* ViewController.swift */,
 			);
 			path = View;
@@ -97,6 +110,8 @@
 		73D989DB2C2423C00086484B /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				73ED7FD52C2438AB00F84EBC /* CustomViews */,
+				73ED7FD02C242C5900F84EBC /* Fonts */,
 				73ED7FC82C24267600F84EBC /* Extensions */,
 				73ED7FC52C24263000F84EBC /* Constants */,
 				73D989C42C2423950086484B /* AppDelegate.swift */,
@@ -136,8 +151,35 @@
 			isa = PBXGroup;
 			children = (
 				73ED7FC92C24268800F84EBC /* UIColor+Ext.swift */,
+				73ED7FCB2C24289600F84EBC /* BaseVC.swift */,
+				73ED7FD32C24321B00F84EBC /* UIView+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		73ED7FCD2C2429A400F84EBC /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				73ED7FCE2C2429B600F84EBC /* RegistrationVC.swift */,
+				73ED7FD82C24796B00F84EBC /* EnterVC.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		73ED7FD02C242C5900F84EBC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				73ED7FD12C242C8A00F84EBC /* Sen-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		73ED7FD52C2438AB00F84EBC /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				73ED7FD62C2438D600F84EBC /* RegistrationStackView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73ED7FD22C242DEB00F84EBC /* Sen-VariableFont_wght.ttf in Resources */,
 				73D989CE2C2423970086484B /* Assets.xcassets in Resources */,
 				73D989D12C2423970086484B /* Base in Resources */,
 			);
@@ -210,12 +253,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73ED7FCC2C24289600F84EBC /* BaseVC.swift in Sources */,
 				73ED7FCA2C24268800F84EBC /* UIColor+Ext.swift in Sources */,
+				73ED7FD42C24321B00F84EBC /* UIView+Ext.swift in Sources */,
+				73ED7FD92C24796B00F84EBC /* EnterVC.swift in Sources */,
 				73ED7FC42C2424B600F84EBC /* MainPresenter.swift in Sources */,
 				73D989C92C2423950086484B /* ViewController.swift in Sources */,
+				73ED7FCF2C2429B600F84EBC /* RegistrationVC.swift in Sources */,
 				73D989C52C2423950086484B /* AppDelegate.swift in Sources */,
 				73ED7FC22C24249000F84EBC /* ScreenFactory.swift in Sources */,
 				73D989C72C2423950086484B /* SceneDelegate.swift in Sources */,
+				73ED7FD72C2438D600F84EBC /* RegistrationStackView.swift in Sources */,
 				73ED7FC72C24263E00F84EBC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

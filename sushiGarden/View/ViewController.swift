@@ -12,7 +12,7 @@ protocol MainVCProtocol: AnyObject {
 }
 
 
-final class MainViewController: UIViewController {
+final class MainViewController: BaseViewController {
 
     private var presenter: MainPresenterProtocol
 
@@ -31,7 +31,6 @@ final class MainViewController: UIViewController {
     }
 
     private func setupUI() {
-        view.backgroundColor = .red
     }
 
 }
