@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		73D989C52C2423950086484B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C42C2423950086484B /* AppDelegate.swift */; };
 		73D989C72C2423950086484B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C62C2423950086484B /* SceneDelegate.swift */; };
-		73D989C92C2423950086484B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C82C2423950086484B /* ViewController.swift */; };
+		73D989C92C2423950086484B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C82C2423950086484B /* TabBarController.swift */; };
 		73D989CE2C2423970086484B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73D989CD2C2423970086484B /* Assets.xcassets */; };
 		73D989D12C2423970086484B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 73D989D02C2423970086484B /* Base */; };
 		73ED7FC22C24249000F84EBC /* ScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FC12C24249000F84EBC /* ScreenFactory.swift */; };
@@ -22,13 +22,19 @@
 		73ED7FD42C24321B00F84EBC /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FD32C24321B00F84EBC /* UIView+Ext.swift */; };
 		73ED7FD72C2438D600F84EBC /* RegistrationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FD62C2438D600F84EBC /* RegistrationStackView.swift */; };
 		73ED7FD92C24796B00F84EBC /* EnterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FD82C24796B00F84EBC /* EnterVC.swift */; };
+		73ED7FDB2C247E1800F84EBC /* CustomButtonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FDA2C247E1800F84EBC /* CustomButtonStack.swift */; };
+		73ED7FDF2C24861100F84EBC /* CatalogueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FDE2C24861000F84EBC /* CatalogueVC.swift */; };
+		73ED7FE22C24866E00F84EBC /* PromoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FE12C24866E00F84EBC /* PromoVC.swift */; };
+		73ED7FE52C24868D00F84EBC /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FE42C24868D00F84EBC /* OrdersVC.swift */; };
+		73ED7FE82C2486B200F84EBC /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FE72C2486B200F84EBC /* CartVC.swift */; };
+		73ED7FEB2C2486DA00F84EBC /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FEA2C2486DA00F84EBC /* ProfileVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		73D989C12C2423950086484B /* sushiGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sushiGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73D989C42C2423950086484B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73D989C62C2423950086484B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		73D989C82C2423950086484B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		73D989C82C2423950086484B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		73D989CD2C2423970086484B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73D989D02C2423970086484B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73D989D22C2423970086484B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +48,12 @@
 		73ED7FD32C24321B00F84EBC /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		73ED7FD62C2438D600F84EBC /* RegistrationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationStackView.swift; sourceTree = "<group>"; };
 		73ED7FD82C24796B00F84EBC /* EnterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterVC.swift; sourceTree = "<group>"; };
+		73ED7FDA2C247E1800F84EBC /* CustomButtonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStack.swift; sourceTree = "<group>"; };
+		73ED7FDE2C24861000F84EBC /* CatalogueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueVC.swift; sourceTree = "<group>"; };
+		73ED7FE12C24866E00F84EBC /* PromoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoVC.swift; sourceTree = "<group>"; };
+		73ED7FE42C24868D00F84EBC /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
+		73ED7FE72C2486B200F84EBC /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		73ED7FEA2C2486DA00F84EBC /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +105,13 @@
 		73D989D92C2423B70086484B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				73ED7FDD2C2485F800F84EBC /* Catalogue */,
+				73ED7FE02C24866100F84EBC /* Promo */,
+				73ED7FE32C24868300F84EBC /* Orders */,
+				73ED7FE62C2486A800F84EBC /* Cart */,
+				73ED7FE92C2486CE00F84EBC /* Profile */,
+				73ED7FDC2C24858700F84EBC /* TabBarController */,
 				73ED7FCD2C2429A400F84EBC /* Registration */,
-				73D989C82C2423950086484B /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,8 +195,57 @@
 			isa = PBXGroup;
 			children = (
 				73ED7FD62C2438D600F84EBC /* RegistrationStackView.swift */,
+				73ED7FDA2C247E1800F84EBC /* CustomButtonStack.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		73ED7FDC2C24858700F84EBC /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				73D989C82C2423950086484B /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		73ED7FDD2C2485F800F84EBC /* Catalogue */ = {
+			isa = PBXGroup;
+			children = (
+				73ED7FDE2C24861000F84EBC /* CatalogueVC.swift */,
+			);
+			path = Catalogue;
+			sourceTree = "<group>";
+		};
+		73ED7FE02C24866100F84EBC /* Promo */ = {
+			isa = PBXGroup;
+			children = (
+				73ED7FE12C24866E00F84EBC /* PromoVC.swift */,
+			);
+			path = Promo;
+			sourceTree = "<group>";
+		};
+		73ED7FE32C24868300F84EBC /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				73ED7FE42C24868D00F84EBC /* OrdersVC.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		73ED7FE62C2486A800F84EBC /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				73ED7FE72C2486B200F84EBC /* CartVC.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		73ED7FE92C2486CE00F84EBC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				73ED7FEA2C2486DA00F84EBC /* ProfileVC.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,16 +319,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73ED7FDF2C24861100F84EBC /* CatalogueVC.swift in Sources */,
+				73ED7FE52C24868D00F84EBC /* OrdersVC.swift in Sources */,
 				73ED7FCC2C24289600F84EBC /* BaseVC.swift in Sources */,
+				73ED7FE82C2486B200F84EBC /* CartVC.swift in Sources */,
 				73ED7FCA2C24268800F84EBC /* UIColor+Ext.swift in Sources */,
 				73ED7FD42C24321B00F84EBC /* UIView+Ext.swift in Sources */,
 				73ED7FD92C24796B00F84EBC /* EnterVC.swift in Sources */,
 				73ED7FC42C2424B600F84EBC /* MainPresenter.swift in Sources */,
-				73D989C92C2423950086484B /* ViewController.swift in Sources */,
+				73D989C92C2423950086484B /* TabBarController.swift in Sources */,
 				73ED7FCF2C2429B600F84EBC /* RegistrationVC.swift in Sources */,
 				73D989C52C2423950086484B /* AppDelegate.swift in Sources */,
+				73ED7FDB2C247E1800F84EBC /* CustomButtonStack.swift in Sources */,
+				73ED7FEB2C2486DA00F84EBC /* ProfileVC.swift in Sources */,
 				73ED7FC22C24249000F84EBC /* ScreenFactory.swift in Sources */,
 				73D989C72C2423950086484B /* SceneDelegate.swift in Sources */,
+				73ED7FE22C24866E00F84EBC /* PromoVC.swift in Sources */,
 				73ED7FD72C2438D600F84EBC /* RegistrationStackView.swift in Sources */,
 				73ED7FC72C24263E00F84EBC /* Constants.swift in Sources */,
 			);

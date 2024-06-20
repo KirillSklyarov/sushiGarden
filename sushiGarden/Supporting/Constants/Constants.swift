@@ -21,7 +21,7 @@ struct Constants {
         static let agreementGray = UIColor(hexString: "7E8A97")
         static let buttonRed = UIColor(hexString: "C2182E")
         static let textDarkGray = UIColor(hexString: "646982")
-
+        static let tabBarGray = UIColor(hexString: "4C4C4C")
 
     }
 

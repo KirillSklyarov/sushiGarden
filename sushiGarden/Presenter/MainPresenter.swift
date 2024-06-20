@@ -7,11 +7,7 @@
 
 import Foundation
 
-protocol MainPresenterProtocol: AnyObject {
 
-}
+final class MainPresenter {
 
-final class MainPresenter: MainPresenterProtocol {
-
-    weak var view: MainVCProtocol?
 }

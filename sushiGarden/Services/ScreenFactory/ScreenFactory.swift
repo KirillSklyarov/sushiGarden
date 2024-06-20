@@ -10,20 +10,30 @@ import UIKit
 final class ScreenFactory {
 
     enum Screens {
-        case Main
+        case Catalogue
         case Registration
+        case TabBarController
     }
 
     static func createScreen(_ screen: Screens) -> UIViewController {
+        var viewController: UIViewController?
+
         switch screen {
-        case .Main:
-            let presenter = MainPresenter()
-            let viewController = MainViewController(presenter: presenter)
-            presenter.view = viewController as any MainVCProtocol
+        case .TabBarController:
+            viewController = TabBarController()
+        case .Catalogue:
+//            let presenter = MainPresenter()
+            let viewController = CatalogueVC()
+//            presenter.view = viewController as any MainVCProtocol
             return viewController
         case .Registration:
             let viewController = RegistrationVC()
             return viewController
+        }
+        if let viewController {
+            return viewController
+        } else {
+            fatalError("Проблема с фабрикой экранов")
         }
     }
 }

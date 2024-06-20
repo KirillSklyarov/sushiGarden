@@ -26,25 +26,6 @@ final class EnterVC: BaseViewController {
         return view
     } ()
 
-    private lazy var haveAccountLabel: UILabel = {
-        let label = UILabel()
-        label.text = "У вас нет аккаунта?"
-        label.font = Constants.AppFonts.regular18
-        label.textColor = Constants.AppColors.textDarkGray
-        label.numberOfLines = 0
-        return label
-    }()
-
-    private lazy var accountButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Регистрация".uppercased(), for: .normal)
-        button.titleLabel?.font = Constants.AppFonts.bold16
-        button.setTitleColor(Constants.AppColors.buttonRed, for: .normal)
-        return button
-    }()
-
-    private lazy var enterButton = setupEnterButton()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -58,20 +39,7 @@ final class EnterVC: BaseViewController {
         textFieldsStack.axis = .vertical
         textFieldsStack.spacing = 28
 
-        let haveAccountStack = UIStackView(arrangedSubviews: [haveAccountLabel, accountButton])
-        haveAccountStack.axis = .horizontal
-        haveAccountStack.spacing = 3
-        let accountContainer = UIView()
-        accountContainer.addSubViews([haveAccountStack])
-
-        NSLayoutConstraint.activate([
-            haveAccountStack.centerXAnchor.constraint(equalTo: accountContainer.centerXAnchor),
-            haveAccountStack.centerYAnchor.constraint(equalTo: accountContainer.centerYAnchor),
-        ])
-
-        let buttonStack = UIStackView(arrangedSubviews: [enterButton, accountContainer])
-        buttonStack.axis = .vertical
-        buttonStack.spacing = 28
+        let buttonStack = CustomButtonStack(haveAccount: true)
 
         let contentStack = UIStackView(arrangedSubviews: [textFieldsStack, buttonStack])
         contentStack.axis = .vertical
@@ -83,8 +51,6 @@ final class EnterVC: BaseViewController {
             contentStack.topAnchor.constraint(equalTo: registrationView.topAnchor, constant: 50),
             contentStack.leadingAnchor.constraint(equalTo: registrationView.leadingAnchor, constant: 28),
             contentStack.trailingAnchor.constraint(equalTo: registrationView.trailingAnchor, constant: -28),
-
-            enterButton.heightAnchor.constraint(equalTo: registrationView.heightAnchor, multiplier: 71 / 664),
         ])
 
         view.addSubViews([titleLabel, registrationView])

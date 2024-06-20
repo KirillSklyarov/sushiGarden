@@ -58,8 +58,6 @@ final class RegistrationVC: BaseViewController {
         return button
     }()
 
-    private lazy var enterButton = setupEnterButton()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -70,27 +68,25 @@ final class RegistrationVC: BaseViewController {
         let emailStack = RegistrationStackView(name: "Почта", placeholder: "example@gmail.com")
         let passwordStack = RegistrationStackView(name: "Пароль", placeholder: "**********")
 
-        let buttonStack = UIStackView(arrangedSubviews: [agreementButton, agreementLabel])
-        buttonStack.axis = .horizontal
-        buttonStack.spacing = 23
+        let agreementStack = UIStackView(arrangedSubviews: [agreementButton, agreementLabel])
+        agreementStack.axis = .horizontal
+        agreementStack.spacing = 23
 
-        let haveAccountStack = UIStackView(arrangedSubviews: [haveAccountLabel, accountButton])
-        haveAccountStack.axis = .horizontal
-        haveAccountStack.spacing = 3
-        let accountContainer = UIView()
-        accountContainer.addSubViews([haveAccountStack])
+        let buttonStack = CustomButtonStack(haveAccount: false)
 
-
-        NSLayoutConstraint.activate([
-            haveAccountStack.centerXAnchor.constraint(equalTo: accountContainer.centerXAnchor),
-            haveAccountStack.centerYAnchor.constraint(equalTo: accountContainer.centerYAnchor),
-        ])
-
-        let contentStack = UIStackView(arrangedSubviews: [nameStack, emailStack, passwordStack, buttonStack, enterButton, accountContainer])
+        let contentStack = UIStackView(arrangedSubviews: [nameStack, emailStack, passwordStack, agreementStack, buttonStack])
         contentStack.axis = .vertical
         contentStack.spacing = 28
 
-        view.addSubViews([titleLabel, registrationView, contentStack])
+        registrationView.addSubViews([contentStack])
+
+        NSLayoutConstraint.activate([
+            contentStack.topAnchor.constraint(equalTo: registrationView.topAnchor, constant: 50),
+            contentStack.leadingAnchor.constraint(equalTo: registrationView.leadingAnchor, constant: 28),
+            contentStack.trailingAnchor.constraint(equalTo: registrationView.trailingAnchor, constant: -28)
+        ])
+
+        view.addSubViews([titleLabel, registrationView])
 
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 202),
@@ -100,15 +96,32 @@ final class RegistrationVC: BaseViewController {
             registrationView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             registrationView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             registrationView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-
-            contentStack.topAnchor.constraint(equalTo: registrationView.topAnchor, constant: 50),
-            contentStack.leadingAnchor.constraint(equalTo: registrationView.leadingAnchor, constant: 28),
-            contentStack.trailingAnchor.constraint(equalTo: registrationView.trailingAnchor, constant: -28),
-
-            enterButton.heightAnchor.constraint(equalTo: registrationView.heightAnchor, multiplier: 71 / 664),
-            accountContainer.heightAnchor.constraint(equalTo: registrationView.heightAnchor, multiplier: 28/664),
-            accountContainer.bottomAnchor.constraint(equalTo: registrationView.bottomAnchor, constant: -50)
-
         ])
+    }
+}
+
+//MARK: - SwiftUI
+import SwiftUI
+struct ProviderRegistration : PreviewProvider {
+    static var previews: some View {
+        ContainterView().edgesIgnoringSafeArea(.all)
+    }
+
+    struct ContainterView: UIViewControllerRepresentable {
+        func makeUIViewController(context: Context) -> UIViewController {
+            return RegistrationVC()
+        }
+
+        typealias UIViewControllerType = UIViewController
+
+
+        let viewController = RegistrationVC()
+        func makeUIViewController(context: UIViewControllerRepresentableContext<ProviderRegistration.ContainterView>) -> RegistrationVC {
+            return viewController
+        }
+
+        func updateUIViewController(_ uiViewController: ProviderRegistration.ContainterView.UIViewControllerType, context: UIViewControllerRepresentableContext<ProviderRegistration.ContainterView>) {
+
+        }
     }
 }
