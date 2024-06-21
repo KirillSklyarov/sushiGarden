@@ -14,8 +14,8 @@ class RegistrationStackView: UIStackView {
     private lazy var headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Имя".uppercased()
-        label.font = Constants.AppFonts.regular15
-        label.textColor = Constants.AppColors.textBlack
+        label.font = AppConstants.AppFonts.regular15
+        label.textColor = AppConstants.AppColors.textBlack
         return label
     }()
 
@@ -23,7 +23,7 @@ class RegistrationStackView: UIStackView {
         let field = UITextField()
         field.placeholder = "Александр"
         field.heightAnchor.constraint(equalToConstant: textfieldHeight).isActive = true
-        field.backgroundColor = Constants.AppColors.textFieldGray
+        field.backgroundColor = AppConstants.AppColors.textFieldGray
         field.layer.cornerRadius = 11
         field.layer.masksToBounds = true
 

@@ -7,23 +7,77 @@
 
 import UIKit
 
-class CatalogueVC: UIViewController {
+class CatalogueVC: BaseViewController {
+
+    private lazy var collectionView: UICollectionView = {
+        let collection = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
+        collection.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collection.dataSource = self
+        collection.delegate = self
+        collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        return collection
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
 
-        // Do any additional setup after loading the view.
+    private func createLayout() -> UICollectionViewLayout {
+
+    }
+
+
+    private func setupUI() {
+        let addressHeader = addressHeaderForCatalogueVC()
+
+        view.addSubViews([addressHeader])
+
+        NSLayoutConstraint.activate([
+            addressHeader.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            addressHeader.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            addressHeader.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            addressHeader.heightAnchor.constraint(equalToConstant: 45),
+        ])
+    }
+}
+
+extension CatalogueVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        return cell
     }
     
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
+//MARK: - SwiftUI
+import SwiftUI
+struct ProviderCatalogue : PreviewProvider {
+    static var previews: some View {
+        ContainterView().edgesIgnoringSafeArea(.all)
     }
-    */
 
+    struct ContainterView: UIViewControllerRepresentable {
+        func makeUIViewController(context: Context) -> UIViewController {
+            return CatalogueVC()
+        }
+
+        typealias UIViewControllerType = UIViewController
+
+
+        let viewController = CatalogueVC()
+        func makeUIViewController(context: UIViewControllerRepresentableContext<ProviderCatalogue.ContainterView>) -> CatalogueVC {
+            return viewController
+        }
+
+        func updateUIViewController(_ uiViewController: ProviderCatalogue.ContainterView.UIViewControllerType, context: UIViewControllerRepresentableContext<ProviderCatalogue.ContainterView>) {
+
+        }
+    }
 }

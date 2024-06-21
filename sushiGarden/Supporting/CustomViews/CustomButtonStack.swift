@@ -11,16 +11,16 @@ class CustomButtonStack: UIStackView {
 
     private lazy var haveAccountLabel: UILabel = {
         let label = UILabel()
-        label.font = Constants.AppFonts.regular18
-        label.textColor = Constants.AppColors.textDarkGray
+        label.font = AppConstants.AppFonts.regular18
+        label.textColor = AppConstants.AppColors.textDarkGray
         label.numberOfLines = 0
         return label
     }()
 
     private lazy var accountButton: UIButton = {
         let button = UIButton()
-        button.titleLabel?.font = Constants.AppFonts.bold16
-        button.setTitleColor(Constants.AppColors.buttonRed, for: .normal)
+        button.titleLabel?.font = AppConstants.AppFonts.bold16
+        button.setTitleColor(AppConstants.AppColors.buttonRed, for: .normal)
         return button
     }()
 

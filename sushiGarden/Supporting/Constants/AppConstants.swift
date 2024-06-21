@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Constants {
+struct AppConstants {
 
     struct AppSize {
         static let registrationViewHeight = CGFloat(664)
@@ -22,6 +22,9 @@ struct Constants {
         static let buttonRed = UIColor(hexString: "C2182E")
         static let textDarkGray = UIColor(hexString: "646982")
         static let tabBarGray = UIColor(hexString: "4C4C4C")
+        static let catalogueGray = UIColor(hexString: "5F5F5F")
+
+
 
     }
 
@@ -29,7 +32,8 @@ struct Constants {
         static let bold16 = UIFont(name: "Sen-Regular_Bold", size: 16)
         static let bold34 = UIFont(name: "Sen-Regular_Bold", size: 34)
        
-        static let regular14 = UIFont(name: "Sen-Regular", size: 15)
+        static let regular12 = UIFont(name: "Sen-Regular", size: 12)
+        static let regular14 = UIFont(name: "Sen-Regular", size: 14)
         static let regular15 = UIFont(name: "Sen-Regular", size: 15)
         static let regular16 = UIFont(name: "Sen-Regular", size: 16)
         static let regular18 = UIFont(name: "Sen-Regular", size: 18)
