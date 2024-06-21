@@ -7,7 +7,7 @@
 
 import UIKit
 
-class addressHeaderForCatalogueVC: UIView {
+final class addressHeaderForCatalogueVC: UIView {
 
     private lazy var deliveryImage: UIImageView = {
         let imageView = UIImageView()
@@ -18,16 +18,16 @@ class addressHeaderForCatalogueVC: UIView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Доставка по адресу"
-        label.font = AppConstants.AppFonts.regular12
-        label.textColor = AppConstants.AppColors.catalogueGray
+        label.font = AppConstants.Fonts.regular12
+        label.textColor = AppConstants.Colors.catalogueGray
         return label
     }()
 
     private lazy var addressLabel: UILabel = {
         let label = UILabel()
         label.text = "Воронеж, Мира, 36"
-        label.font = AppConstants.AppFonts.bold16
-        label.textColor = AppConstants.AppColors.titleWhite
+        label.font = AppConstants.Fonts.bold16
+        label.textColor = AppConstants.Colors.titleWhite
         return label
     }()
 

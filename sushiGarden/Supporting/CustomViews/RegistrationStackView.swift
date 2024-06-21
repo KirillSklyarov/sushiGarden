@@ -7,15 +7,15 @@
 
 import UIKit
 
-class RegistrationStackView: UIStackView {
+final class RegistrationStackView: UIStackView {
 
     let textfieldHeight = CGFloat(60)
 
     private lazy var headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Имя".uppercased()
-        label.font = AppConstants.AppFonts.regular15
-        label.textColor = AppConstants.AppColors.textBlack
+        label.font = AppConstants.Fonts.regular15
+        label.textColor = AppConstants.Colors.textBlack
         return label
     }()
 
@@ -23,7 +23,7 @@ class RegistrationStackView: UIStackView {
         let field = UITextField()
         field.placeholder = "Александр"
         field.heightAnchor.constraint(equalToConstant: textfieldHeight).isActive = true
-        field.backgroundColor = AppConstants.AppColors.textFieldGray
+        field.backgroundColor = AppConstants.Colors.textFieldGray
         field.layer.cornerRadius = 11
         field.layer.masksToBounds = true
 

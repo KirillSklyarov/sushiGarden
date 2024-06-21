@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73086BEC2C257BCD0052472C /* UpperCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BEB2C257BCD0052472C /* UpperCollectionViewCell.swift */; };
+		73086BEE2C258E410052472C /* CatNamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BED2C258E410052472C /* CatNamesCollectionViewCell.swift */; };
+		73086BF02C25C25E0052472C /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BEF2C25C25E0052472C /* DetailCollectionViewCell.swift */; };
+		73086BF32C25D9910052472C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BF22C25D9910052472C /* DetailViewController.swift */; };
 		73D989C52C2423950086484B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C42C2423950086484B /* AppDelegate.swift */; };
 		73D989C72C2423950086484B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C62C2423950086484B /* SceneDelegate.swift */; };
 		73D989C92C2423950086484B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C82C2423950086484B /* TabBarController.swift */; };
@@ -32,6 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		73086BEB2C257BCD0052472C /* UpperCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperCollectionViewCell.swift; sourceTree = "<group>"; };
+		73086BED2C258E410052472C /* CatNamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatNamesCollectionViewCell.swift; sourceTree = "<group>"; };
+		73086BEF2C25C25E0052472C /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		73086BF22C25D9910052472C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		73D989C12C2423950086484B /* sushiGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sushiGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73D989C42C2423950086484B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73D989C62C2423950086484B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73086BF12C25D9760052472C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				73086BF22C25D9910052472C /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		73D989B82C2423950086484B = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +123,7 @@
 		73D989D92C2423B70086484B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				73086BF12C25D9760052472C /* Detail */,
 				73ED7FDD2C2485F800F84EBC /* Catalogue */,
 				73ED7FE02C24866100F84EBC /* Promo */,
 				73ED7FE32C24868300F84EBC /* Orders */,
@@ -199,6 +216,9 @@
 				73ED7FD62C2438D600F84EBC /* RegistrationStackView.swift */,
 				73ED7FDA2C247E1800F84EBC /* CustomButtonStack.swift */,
 				73ED7FEC2C256A1E00F84EBC /* AddressHeaderForCatalogueVC.swift */,
+				73086BEB2C257BCD0052472C /* UpperCollectionViewCell.swift */,
+				73086BED2C258E410052472C /* CatNamesCollectionViewCell.swift */,
+				73086BEF2C25C25E0052472C /* DetailCollectionViewCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -324,19 +344,23 @@
 			files = (
 				73ED7FDF2C24861100F84EBC /* CatalogueVC.swift in Sources */,
 				73ED7FE52C24868D00F84EBC /* OrdersVC.swift in Sources */,
+				73086BF32C25D9910052472C /* DetailViewController.swift in Sources */,
 				73ED7FCC2C24289600F84EBC /* BaseVC.swift in Sources */,
 				73ED7FED2C256A1E00F84EBC /* AddressHeaderForCatalogueVC.swift in Sources */,
 				73ED7FE82C2486B200F84EBC /* CartVC.swift in Sources */,
+				73086BEE2C258E410052472C /* CatNamesCollectionViewCell.swift in Sources */,
 				73ED7FCA2C24268800F84EBC /* UIColor+Ext.swift in Sources */,
 				73ED7FD42C24321B00F84EBC /* UIView+Ext.swift in Sources */,
 				73ED7FD92C24796B00F84EBC /* EnterVC.swift in Sources */,
 				73ED7FC42C2424B600F84EBC /* MainPresenter.swift in Sources */,
 				73D989C92C2423950086484B /* TabBarController.swift in Sources */,
+				73086BF02C25C25E0052472C /* DetailCollectionViewCell.swift in Sources */,
 				73ED7FCF2C2429B600F84EBC /* RegistrationVC.swift in Sources */,
 				73D989C52C2423950086484B /* AppDelegate.swift in Sources */,
 				73ED7FDB2C247E1800F84EBC /* CustomButtonStack.swift in Sources */,
 				73ED7FEB2C2486DA00F84EBC /* ProfileVC.swift in Sources */,
 				73ED7FC22C24249000F84EBC /* ScreenFactory.swift in Sources */,
+				73086BEC2C257BCD0052472C /* UpperCollectionViewCell.swift in Sources */,
 				73D989C72C2423950086484B /* SceneDelegate.swift in Sources */,
 				73ED7FE22C24866E00F84EBC /* PromoVC.swift in Sources */,
 				73ED7FD72C2438D600F84EBC /* RegistrationStackView.swift in Sources */,
@@ -491,7 +515,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,7 +547,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,11 +9,11 @@ import UIKit
 
 struct AppConstants {
 
-    struct AppSize {
+    struct Size {
         static let registrationViewHeight = CGFloat(664)
     }
 
-    struct AppColors {
+    struct Colors {
         static let backgroundBlack = UIColor(hexString: "000000")
         static let titleWhite = UIColor(hexString: "FFFFFF")
         static let textBlack = UIColor(hexString: "0F0F11")
@@ -23,13 +23,14 @@ struct AppConstants {
         static let textDarkGray = UIColor(hexString: "646982")
         static let tabBarGray = UIColor(hexString: "4C4C4C")
         static let catalogueGray = UIColor(hexString: "5F5F5F")
-
+        static let detailDarkGray = UIColor(hexString: "29282C")
 
 
     }
 
-    struct AppFonts {
+    struct Fonts {
         static let bold16 = UIFont(name: "Sen-Regular_Bold", size: 16)
+        static let bold19 = UIFont(name: "Sen-Regular_Bold", size: 19)
         static let bold34 = UIFont(name: "Sen-Regular_Bold", size: 34)
        
         static let regular12 = UIFont(name: "Sen-Regular", size: 12)

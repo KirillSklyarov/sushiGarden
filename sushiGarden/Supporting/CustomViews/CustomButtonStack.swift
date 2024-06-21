@@ -7,20 +7,20 @@
 
 import UIKit
 
-class CustomButtonStack: UIStackView {
+final class CustomButtonStack: UIStackView {
 
     private lazy var haveAccountLabel: UILabel = {
         let label = UILabel()
-        label.font = AppConstants.AppFonts.regular18
-        label.textColor = AppConstants.AppColors.textDarkGray
+        label.font = AppConstants.Fonts.regular18
+        label.textColor = AppConstants.Colors.textDarkGray
         label.numberOfLines = 0
         return label
     }()
 
     private lazy var accountButton: UIButton = {
         let button = UIButton()
-        button.titleLabel?.font = AppConstants.AppFonts.bold16
-        button.setTitleColor(AppConstants.AppColors.buttonRed, for: .normal)
+        button.titleLabel?.font = AppConstants.Fonts.bold16
+        button.setTitleColor(AppConstants.Colors.buttonRed, for: .normal)
         return button
     }()
 

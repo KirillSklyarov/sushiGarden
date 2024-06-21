@@ -12,14 +12,14 @@ final class RegistrationVC: BaseViewController {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Регистрация"
-        label.font = AppConstants.AppFonts.bold34
-        label.textColor = AppConstants.AppColors.titleWhite
+        label.font = AppConstants.Fonts.bold34
+        label.textColor = AppConstants.Colors.titleWhite
         return label
     }()
 
     private lazy var registrationView: UIView = {
         let view = UIView()
-        view.backgroundColor = AppConstants.AppColors.titleWhite
+        view.backgroundColor = AppConstants.Colors.titleWhite
         view.layer.cornerRadius = 27
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view.clipsToBounds = true
@@ -29,8 +29,8 @@ final class RegistrationVC: BaseViewController {
     private lazy var agreementLabel: UILabel = {
         let label = UILabel()
         label.text = "Я согласен с Условиями предоставления услуг и Политикой конфиденциальности"
-        label.font = AppConstants.AppFonts.regular14
-        label.textColor = AppConstants.AppColors.agreementGray
+        label.font = AppConstants.Fonts.regular14
+        label.textColor = AppConstants.Colors.agreementGray
         label.numberOfLines = 0
         return label
     }()
@@ -44,8 +44,8 @@ final class RegistrationVC: BaseViewController {
     private lazy var haveAccountLabel: UILabel = {
         let label = UILabel()
         label.text = "Уже есть аккаунт?"
-        label.font = AppConstants.AppFonts.regular18
-        label.textColor = AppConstants.AppColors.textDarkGray
+        label.font = AppConstants.Fonts.regular18
+        label.textColor = AppConstants.Colors.textDarkGray
         label.numberOfLines = 0
         return label
     }()
@@ -53,8 +53,8 @@ final class RegistrationVC: BaseViewController {
     private lazy var accountButton: UIButton = {
         let button = UIButton()
         button.setTitle("Войти".uppercased(), for: .normal)
-        button.titleLabel?.font = AppConstants.AppFonts.bold16
-        button.setTitleColor(AppConstants.AppColors.buttonRed, for: .normal)
+        button.titleLabel?.font = AppConstants.Fonts.bold16
+        button.setTitleColor(AppConstants.Colors.buttonRed, for: .normal)
         return button
     }()
 

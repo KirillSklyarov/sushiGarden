@@ -15,8 +15,8 @@ final class TabBarController: UITabBarController {
     }
 
     private func setupTabBar() {
-        tabBar.tintColor = AppConstants.AppColors.titleWhite
-        tabBar.unselectedItemTintColor = AppConstants.AppColors.tabBarGray
+        tabBar.tintColor = AppConstants.Colors.titleWhite
+        tabBar.unselectedItemTintColor = AppConstants.Colors.tabBarGray
 
         let catalogue = UINavigationController(rootViewController: CatalogueVC())
         let promo = UINavigationController(rootViewController: PromoVC())
