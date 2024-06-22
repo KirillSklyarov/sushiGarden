@@ -62,11 +62,6 @@ final class DetailCollectionViewCell: UICollectionViewCell {
 
         let nameStack = UIStackView(arrangedSubviews: [sushiNameLabel, sushiWeightLabel])
         nameStack.axis = .vertical
-//        nameStack.spacing = 7
-//        nameStack.distribution = .equalSpacing
-
-//        nameStack.layer.borderWidth = 1
-//        nameStack.layer.borderColor = UIColor.white.cgColor
 
         contentView.addSubViews([sushiImage, nameStack, priceButton])
 

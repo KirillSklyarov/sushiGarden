@@ -32,7 +32,7 @@ class CatalogueVC: BaseViewController {
     let categoryNames = ["Суши", "Роллы", "Горячие роллы", "Салаты", "WOK"]
     let sushiDetailData: [sushiDetail] = [
         sushiDetail(name: "Хикари", weight: 255, price: 620, photoName: "detail1"),
-        sushiDetail(name: "Лос-Аннжелес", weight: 285, price: 707, photoName: "detail2"),
+        sushiDetail(name: "Лос-Анджелес", weight: 285, price: 707, photoName: "detail2"),
         sushiDetail(name: "Филадельфия", weight: 300, price: 800, photoName: "detail3"),
         sushiDetail(name: "Калифорния", weight: 275, price: 920, photoName: "detail4"),
     ]
@@ -161,6 +161,16 @@ extension CatalogueVC: UICollectionViewDelegate, UICollectionViewDataSource {
         }
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let section = indexPath.section
+        switch section {
+        case 2: print("Hooray")
+            let newScreen = DetailViewController()
+            let _ = UINavigationController(rootViewController: newScreen)
+            navigationController?.pushViewController(newScreen, animated: true)
+        default: print("nothing")
+        }
+    }
 }
 
 

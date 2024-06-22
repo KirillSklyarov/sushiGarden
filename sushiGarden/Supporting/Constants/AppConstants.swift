@@ -25,7 +25,6 @@ struct AppConstants {
         static let catalogueGray = UIColor(hexString: "5F5F5F")
         static let detailDarkGray = UIColor(hexString: "29282C")
 
-
     }
 
     struct Fonts {
@@ -38,6 +37,22 @@ struct AppConstants {
         static let regular15 = UIFont(name: "Sen-Regular", size: 15)
         static let regular16 = UIFont(name: "Sen-Regular", size: 16)
         static let regular18 = UIFont(name: "Sen-Regular", size: 18)
+
+    }
+
+    enum AppFonts {
+        case bold16
+        case bold19
+        case bold34
+
+        var font: UIFont {
+            switch self {
+            case .bold16: return UIFont(name: "Sen-Regular_Bold", size: 16)!
+            case .bold19: return UIFont(name: "Sen-Regular_Bold", size: 19)!
+            case .bold34: return UIFont(name: "Sen-Regular_Bold", size: 34)!
+            }
+        }
+
 
     }
 }
