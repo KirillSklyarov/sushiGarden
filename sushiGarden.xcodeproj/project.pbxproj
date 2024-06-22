@@ -13,6 +13,7 @@
 		73086BF32C25D9910052472C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BF22C25D9910052472C /* DetailViewController.swift */; };
 		73086BF52C2615B50052472C /* NameAndWeightStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BF42C2615B50052472C /* NameAndWeightStack.swift */; };
 		73086BF72C26C17A0052472C /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BF62C26C17A0052472C /* CustomStepper.swift */; };
+		73086BF92C27097C0052472C /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BF82C27097C0052472C /* HeaderCollectionReusableView.swift */; };
 		73D989C52C2423950086484B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C42C2423950086484B /* AppDelegate.swift */; };
 		73D989C72C2423950086484B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C62C2423950086484B /* SceneDelegate.swift */; };
 		73D989C92C2423950086484B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C82C2423950086484B /* TabBarController.swift */; };
@@ -44,6 +45,7 @@
 		73086BF22C25D9910052472C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		73086BF42C2615B50052472C /* NameAndWeightStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameAndWeightStack.swift; sourceTree = "<group>"; };
 		73086BF62C26C17A0052472C /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
+		73086BF82C27097C0052472C /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		73D989C12C2423950086484B /* sushiGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sushiGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73D989C42C2423950086484B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73D989C62C2423950086484B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				73086BEF2C25C25E0052472C /* DetailCollectionViewCell.swift */,
 				73086BF42C2615B50052472C /* NameAndWeightStack.swift */,
 				73086BF62C26C17A0052472C /* CustomStepper.swift */,
+				73086BF82C27097C0052472C /* HeaderCollectionReusableView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				73086BF72C26C17A0052472C /* CustomStepper.swift in Sources */,
 				73D989C52C2423950086484B /* AppDelegate.swift in Sources */,
 				73ED7FDB2C247E1800F84EBC /* CustomButtonStack.swift in Sources */,
+				73086BF92C27097C0052472C /* HeaderCollectionReusableView.swift in Sources */,
 				73ED7FEB2C2486DA00F84EBC /* ProfileVC.swift in Sources */,
 				73ED7FC22C24249000F84EBC /* ScreenFactory.swift in Sources */,
 				73086BEC2C257BCD0052472C /* UpperCollectionViewCell.swift in Sources */,
