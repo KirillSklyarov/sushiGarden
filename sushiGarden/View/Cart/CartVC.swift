@@ -116,6 +116,10 @@ final class CartVC: BaseViewController {
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
+        // Убираем слово "back" со следующего экрана
+        navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
+        navigationController?.navigationBar.tintColor = .white
     }
 
     private func setupUI() {
