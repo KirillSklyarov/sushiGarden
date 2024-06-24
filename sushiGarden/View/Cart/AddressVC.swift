@@ -9,9 +9,9 @@ import UIKit
 
 final class AddressVC: BaseViewController {
 
-    private lazy var addressTitleLabel = AddressHeaderLabel(title: "Адрес")
-    private lazy var personalTitleLabel = AddressHeaderLabel(title: "Кому")
-    private lazy var paymentTitleLabel = AddressHeaderLabel(title: "Оплата")
+    private lazy var addressTitleLabel = WhiteBoldTitleLabel(title: "Адрес")
+    private lazy var personalTitleLabel = WhiteBoldTitleLabel(title: "Кому")
+    private lazy var paymentTitleLabel = WhiteBoldTitleLabel(title: "Оплата")
 
     private lazy var streetTextField = AddressTextFieldView(placeholderText: "Город, улица")
     private lazy var blockTextField = AddressTextFieldView(placeholderText: "Корпус")

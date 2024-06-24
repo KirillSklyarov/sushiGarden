@@ -23,7 +23,7 @@ final class RegistrationStackView: UIStackView {
         let field = UITextField()
         field.placeholder = "Александр"
         field.heightAnchor.constraint(equalToConstant: textfieldHeight).isActive = true
-        field.backgroundColor = AppConstants.Colors.textFieldGray
+        field.backgroundColor = AppConstants.Colors.gray
         field.layer.cornerRadius = 11
         field.layer.masksToBounds = true
 

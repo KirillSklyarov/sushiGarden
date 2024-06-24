@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AddressHeaderLabel: UILabel {
+final class WhiteBoldTitleLabel: UILabel {
 
     private lazy var addressTitleLabel: UILabel = {
         let label = UILabel()

@@ -7,23 +7,110 @@
 
 import UIKit
 
-class ProfileVC: UIViewController {
+final class ProfileVC: BaseViewController {
+
+    let data: [ProfileTableModel] = [
+        ProfileTableModel(name: "Профиль", imageName: "user"),
+        ProfileTableModel(name: "Карты", imageName: "card")
+    ]
+
+    private lazy var profilePhoto: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "photo"))
+        imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        return imageView
+    }()
+    private lazy var nameLabel = WhiteBoldTitleLabel(title: "Александр Новиков")
+    private lazy var emailLabel = GrayRegularLabel(title: "anovikov@gmail.com")
+
+    private lazy var ordersView = ProfileOrdersView()
+
+    private lazy var profileCardsTable: UITableView = {
+        let table = UITableView()
+        table.delegate = self
+        table.dataSource = self
+        table.register(ProfileTableViewCell.self, forCellReuseIdentifier: ProfileTableViewCell.identifier)
+        table.backgroundColor = .clear
+        table.allowsSelection = false
+        return table
+    }()
+
+    private lazy var leaveButton = AppBlackButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
 
-        // Do any additional setup after loading the view.
+    private func setupUI() {
+        let personalStack = UIStackView(arrangedSubviews: [profilePhoto, nameLabel, emailLabel])
+        personalStack.axis = .vertical
+        personalStack.alignment = .center
+        personalStack.spacing = 15
+
+        let contentStack = UIStackView(arrangedSubviews: [personalStack, ordersView, profileCardsTable])
+        contentStack.axis = .vertical
+        contentStack.alignment = .fill
+        contentStack.spacing = 30
+
+        view.addSubViews([contentStack, leaveButton])
+
+        NSLayoutConstraint.activate([
+            contentStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            contentStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            contentStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+
+            ordersView.heightAnchor.constraint(equalToConstant: 200),
+            profileCardsTable.heightAnchor.constraint(equalToConstant: 110),
+
+            leaveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            leaveButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+
+        ])
+    }
+}
+
+extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        2
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as? ProfileTableViewCell else { return UITableViewCell()}
+        let item = data[indexPath.row]
+        cell.configure(item: item)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        return cell
     }
-    */
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        55
+    }
+}
+
+
+//MARK: - SwiftUI
+import SwiftUI
+struct ProviderProfile : PreviewProvider {
+    static var previews: some View {
+        ContainterView().edgesIgnoringSafeArea(.all)
+    }
+
+    struct ContainterView: UIViewControllerRepresentable {
+        func makeUIViewController(context: Context) -> UIViewController {
+            return ProfileVC()
+        }
+
+        typealias UIViewControllerType = UIViewController
+
+
+        let viewController = ProfileVC()
+        func makeUIViewController(context: UIViewControllerRepresentableContext<ProviderProfile.ContainterView>) -> ProfileVC {
+            return viewController
+        }
+
+        func updateUIViewController(_ uiViewController: ProviderProfile.ContainterView.UIViewControllerType, context: UIViewControllerRepresentableContext<ProviderProfile.ContainterView>) {
+
+        }
+    }
 }

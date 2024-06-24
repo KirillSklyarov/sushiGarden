@@ -19,9 +19,10 @@ struct AppConstants {
         static let red = UIColor(hexString: "C2182E")
         static let black = UIColor(hexString: "0F0F11")
 
-        static let textFieldGray = UIColor(hexString: "F0F5FA")
+        static let gray = UIColor(hexString: "F0F5FA")
+        static let darkGray = UIColor(hexString: "646982")
+
         static let agreementGray = UIColor(hexString: "7E8A97")
-        static let textDarkGray = UIColor(hexString: "646982")
         static let tabBarGray = UIColor(hexString: "4C4C4C")
         static let catalogueGray = UIColor(hexString: "5F5F5F")
         static let detailDarkGray = UIColor(hexString: "29282C")

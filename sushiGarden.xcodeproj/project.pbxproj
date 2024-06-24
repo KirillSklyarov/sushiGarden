@@ -19,11 +19,16 @@
 		73086C002C280A010052472C /* SushiDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BFF2C280A010052472C /* SushiDetail.swift */; };
 		73086C022C280A1B0052472C /* ExtrasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086C012C280A1B0052472C /* ExtrasData.swift */; };
 		734A5C802C296E36000F93E7 /* TextFieldView-Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C7F2C296E36000F93E7 /* TextFieldView-Address.swift */; };
-		734A5C832C297470000F93E7 /* AddressHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C822C297470000F93E7 /* AddressHeaderLabel.swift */; };
+		734A5C832C297470000F93E7 /* WhiteBoldTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C822C297470000F93E7 /* WhiteBoldTitleLabel.swift */; };
 		734A5C852C2982C1000F93E7 /* AddressTextField+Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C842C2982C1000F93E7 /* AddressTextField+Picker.swift */; };
 		734A5C872C299600000F93E7 /* PaymentsMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C862C299600000F93E7 /* PaymentsMethods.swift */; };
 		734A5C892C29D675000F93E7 /* AddressBillLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C882C29D675000F93E7 /* AddressBillLabel.swift */; };
 		734A5C8C2C29DC1B000F93E7 /* AppRedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C8B2C29DC1B000F93E7 /* AppRedButton.swift */; };
+		734A5C8E2C29ED55000F93E7 /* GrayRegularLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C8D2C29ED55000F93E7 /* GrayRegularLabel.swift */; };
+		734A5C902C29EF5B000F93E7 /* ProfileOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C8F2C29EF5B000F93E7 /* ProfileOrdersView.swift */; };
+		734A5C932C29F0F0000F93E7 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C922C29F0F0000F93E7 /* ProfileTableViewCell.swift */; };
+		734A5C952C29F263000F93E7 /* ProfileTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C942C29F263000F93E7 /* ProfileTableModel.swift */; };
+		734A5C972C2A04A5000F93E7 /* AppBlackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C962C2A04A5000F93E7 /* AppBlackButton.swift */; };
 		7377FE572C284D86002CB450 /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377FE562C284D86002CB450 /* HeaderTableView.swift */; };
 		7377FE592C285941002CB450 /* MakeOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377FE582C285941002CB450 /* MakeOrderView.swift */; };
 		7377FE5B2C287F3D002CB450 /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377FE5A2C287F3D002CB450 /* AddressVC.swift */; };
@@ -64,11 +69,16 @@
 		73086BFF2C280A010052472C /* SushiDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SushiDetail.swift; sourceTree = "<group>"; };
 		73086C012C280A1B0052472C /* ExtrasData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrasData.swift; sourceTree = "<group>"; };
 		734A5C7F2C296E36000F93E7 /* TextFieldView-Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldView-Address.swift"; sourceTree = "<group>"; };
-		734A5C822C297470000F93E7 /* AddressHeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressHeaderLabel.swift; sourceTree = "<group>"; };
+		734A5C822C297470000F93E7 /* WhiteBoldTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBoldTitleLabel.swift; sourceTree = "<group>"; };
 		734A5C842C2982C1000F93E7 /* AddressTextField+Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddressTextField+Picker.swift"; sourceTree = "<group>"; };
 		734A5C862C299600000F93E7 /* PaymentsMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsMethods.swift; sourceTree = "<group>"; };
 		734A5C882C29D675000F93E7 /* AddressBillLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBillLabel.swift; sourceTree = "<group>"; };
 		734A5C8B2C29DC1B000F93E7 /* AppRedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRedButton.swift; sourceTree = "<group>"; };
+		734A5C8D2C29ED55000F93E7 /* GrayRegularLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayRegularLabel.swift; sourceTree = "<group>"; };
+		734A5C8F2C29EF5B000F93E7 /* ProfileOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrdersView.swift; sourceTree = "<group>"; };
+		734A5C922C29F0F0000F93E7 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		734A5C942C29F263000F93E7 /* ProfileTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableModel.swift; sourceTree = "<group>"; };
+		734A5C962C2A04A5000F93E7 /* AppBlackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBlackButton.swift; sourceTree = "<group>"; };
 		7377FE562C284D86002CB450 /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
 		7377FE582C285941002CB450 /* MakeOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderView.swift; sourceTree = "<group>"; };
 		7377FE5A2C287F3D002CB450 /* AddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVC.swift; sourceTree = "<group>"; };
@@ -128,7 +138,8 @@
 		734A5C812C29745F000F93E7 /* Labels */ = {
 			isa = PBXGroup;
 			children = (
-				734A5C822C297470000F93E7 /* AddressHeaderLabel.swift */,
+				734A5C822C297470000F93E7 /* WhiteBoldTitleLabel.swift */,
+				734A5C8D2C29ED55000F93E7 /* GrayRegularLabel.swift */,
 				734A5C842C2982C1000F93E7 /* AddressTextField+Picker.swift */,
 				734A5C882C29D675000F93E7 /* AddressBillLabel.swift */,
 			);
@@ -139,8 +150,17 @@
 			isa = PBXGroup;
 			children = (
 				734A5C8B2C29DC1B000F93E7 /* AppRedButton.swift */,
+				734A5C962C2A04A5000F93E7 /* AppBlackButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		734A5C912C29F0E0000F93E7 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				734A5C922C29F0F0000F93E7 /* ProfileTableViewCell.swift */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		73D989B82C2423950086484B = {
@@ -177,6 +197,7 @@
 				73086BFF2C280A010052472C /* SushiDetail.swift */,
 				73086C012C280A1B0052472C /* ExtrasData.swift */,
 				734A5C862C299600000F93E7 /* PaymentsMethods.swift */,
+				734A5C942C29F263000F93E7 /* ProfileTableModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,6 +310,7 @@
 				7377FE562C284D86002CB450 /* HeaderTableView.swift */,
 				73086BFD2C2801410052472C /* ExtrasTableViewCell.swift */,
 				734A5C7F2C296E36000F93E7 /* TextFieldView-Address.swift */,
+				734A5C8F2C29EF5B000F93E7 /* ProfileOrdersView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -338,6 +360,7 @@
 		73ED7FE92C2486CE00F84EBC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				734A5C912C29F0E0000F93E7 /* CustomCell */,
 				73ED7FEA2C2486DA00F84EBC /* ProfileVC.swift */,
 			);
 			path = Profile;
@@ -429,6 +452,9 @@
 				734A5C892C29D675000F93E7 /* AddressBillLabel.swift in Sources */,
 				7377FE592C285941002CB450 /* MakeOrderView.swift in Sources */,
 				73ED7FCA2C24268800F84EBC /* UIColor+Ext.swift in Sources */,
+				734A5C952C29F263000F93E7 /* ProfileTableModel.swift in Sources */,
+				734A5C932C29F0F0000F93E7 /* ProfileTableViewCell.swift in Sources */,
+				734A5C972C2A04A5000F93E7 /* AppBlackButton.swift in Sources */,
 				73ED7FD42C24321B00F84EBC /* UIView+Ext.swift in Sources */,
 				73086C002C280A010052472C /* SushiDetail.swift in Sources */,
 				73ED7FD92C24796B00F84EBC /* EnterVC.swift in Sources */,
@@ -439,16 +465,18 @@
 				73ED7FCF2C2429B600F84EBC /* RegistrationVC.swift in Sources */,
 				73086BF72C26C17A0052472C /* CustomStepper.swift in Sources */,
 				73D989C52C2423950086484B /* AppDelegate.swift in Sources */,
+				734A5C902C29EF5B000F93E7 /* ProfileOrdersView.swift in Sources */,
 				734A5C802C296E36000F93E7 /* TextFieldView-Address.swift in Sources */,
 				734A5C8C2C29DC1B000F93E7 /* AppRedButton.swift in Sources */,
 				73086BFE2C2801410052472C /* ExtrasTableViewCell.swift in Sources */,
 				734A5C872C299600000F93E7 /* PaymentsMethods.swift in Sources */,
 				73ED7FDB2C247E1800F84EBC /* CustomButtonStack.swift in Sources */,
+				734A5C8E2C29ED55000F93E7 /* GrayRegularLabel.swift in Sources */,
 				73086BF92C27097C0052472C /* HeaderCollectionReusableView.swift in Sources */,
 				73ED7FEB2C2486DA00F84EBC /* ProfileVC.swift in Sources */,
 				73ED7FC22C24249000F84EBC /* ScreenFactory.swift in Sources */,
 				73086BEC2C257BCD0052472C /* UpperCollectionViewCell.swift in Sources */,
-				734A5C832C297470000F93E7 /* AddressHeaderLabel.swift in Sources */,
+				734A5C832C297470000F93E7 /* WhiteBoldTitleLabel.swift in Sources */,
 				73D989C72C2423950086484B /* SceneDelegate.swift in Sources */,
 				73ED7FE22C24866E00F84EBC /* PromoVC.swift in Sources */,
 				73ED7FD72C2438D600F84EBC /* RegistrationStackView.swift in Sources */,

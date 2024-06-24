@@ -45,7 +45,7 @@ final class RegistrationVC: BaseViewController {
         let label = UILabel()
         label.text = "Уже есть аккаунт?"
         label.font = AppConstants.Fonts.regular18
-        label.textColor = AppConstants.Colors.textDarkGray
+        label.textColor = AppConstants.Colors.darkGray
         label.numberOfLines = 0
         return label
     }()

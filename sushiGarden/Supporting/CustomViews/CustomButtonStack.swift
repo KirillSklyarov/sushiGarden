@@ -12,7 +12,7 @@ final class CustomButtonStack: UIStackView {
     private lazy var haveAccountLabel: UILabel = {
         let label = UILabel()
         label.font = AppConstants.Fonts.regular18
-        label.textColor = AppConstants.Colors.textDarkGray
+        label.textColor = AppConstants.Colors.darkGray
         label.numberOfLines = 0
         return label
     }()
