@@ -9,7 +9,10 @@ import UIKit
 
 final class AddressTextFieldViewWithPicker: UIView {
 
-    let paymentMethods = ["Оплата картой", "Оплата наличными"]
+    let paymentMethods: [PaymentsMethods] = [
+        PaymentsMethods(name: "Оплата картой", imageName: "creditcard"),
+        PaymentsMethods(name: "Оплата наличными", imageName: "dollarsign.circle")
+    ]
 
     private lazy var addressTextField: UITextField = {
         let field = UITextField()
@@ -17,6 +20,14 @@ final class AddressTextFieldViewWithPicker: UIView {
         field.textColor = AppConstants.Colors.titleWhite
         field.textAlignment = .left
         field.delegate = self
+
+        let rightChevron = UIImageView()
+        let chevron = UIImage(named: "chevronDown")
+        rightChevron.image = chevron
+
+        field.rightView = rightChevron
+        field.rightViewMode = .always
+
         return field
     }()
 
@@ -70,13 +81,19 @@ final class AddressTextFieldViewWithPicker: UIView {
     @objc private func doneButtonTapped() {
         let selectedIndex = paymentPicker.selectedRow(inComponent: 0)
         let selectedTitle = paymentMethods[selectedIndex]
-        addressTextField.text = selectedTitle
+        addressTextField.text = selectedTitle.name
+
+        let imageName = paymentMethods[selectedIndex].imageName
+        let image = UIImage(systemName: imageName)?.withTintColor(AppConstants.Colors.titleWhite, renderingMode: .alwaysOriginal)
+        let imageView = UIImageView(image: image)
+        imageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        imageView.contentMode = .left
+
+        addressTextField.leftView = imageView
+        addressTextField.leftViewMode = .always
+
         addressTextField.resignFirstResponder()
     }
-}
-
-extension AddressTextFieldViewWithPicker: UITextFieldDelegate {
-
 }
 
 extension AddressTextFieldViewWithPicker: UIPickerViewDataSource, UIPickerViewDelegate {
@@ -89,18 +106,42 @@ extension AddressTextFieldViewWithPicker: UIPickerViewDataSource, UIPickerViewDe
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        paymentMethods[row]
+        paymentMethods[row].name
     }
 
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let title = paymentMethods[row]
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let pickerView = setupPickerView(row: row)
+        return pickerView
+    }
 
-        let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: AppConstants.Colors.titleWhite]
+    private func setupPickerView(row: Int) -> UIView {
+        let pickerView = UIView()
 
-        let attributedTitle = NSAttributedString(string: title, attributes: attributes)
+        let imageView = UIImageView()
+        let imageName = paymentMethods[row].imageName
+        let image = UIImage(systemName: imageName)?.withTintColor(AppConstants.Colors.titleWhite, renderingMode: .alwaysOriginal)
+        imageView.contentMode = .center
+        imageView.image = image
 
-        return attributedTitle
+        let label = UILabel()
+        label.text = paymentMethods[row].name
+        label.font = AppConstants.Fonts.regular16
+        label.textColor = AppConstants.Colors.titleWhite
+
+        let stack = UIStackView(arrangedSubviews: [imageView, label])
+        stack.axis = .horizontal
+        stack.spacing = 10
+
+        pickerView.addSubViews([stack])
+
+        NSLayoutConstraint.activate([
+            stack.centerXAnchor.constraint(equalTo: pickerView.centerXAnchor),
+            stack.centerYAnchor.constraint(equalTo: pickerView.centerYAnchor)
+        ])
+        return pickerView
     }
 }
 
+extension AddressTextFieldViewWithPicker: UITextFieldDelegate {
+
+}
