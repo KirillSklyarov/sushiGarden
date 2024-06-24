@@ -20,7 +20,7 @@ final class CustomButtonStack: UIStackView {
     private lazy var accountButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = AppConstants.Fonts.bold16
-        button.setTitleColor(AppConstants.Colors.buttonRed, for: .normal)
+        button.setTitleColor(AppConstants.Colors.red, for: .normal)
         return button
     }()
 

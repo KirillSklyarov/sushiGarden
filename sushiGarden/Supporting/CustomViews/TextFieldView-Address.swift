@@ -12,7 +12,7 @@ final class AddressTextFieldView: UIView {
     private func setupAddressTextField(placeholderText: String) -> UITextField {
         let field = UITextField()
         field.font = AppConstants.Fonts.bold16
-        field.textColor = AppConstants.Colors.titleWhite
+        field.textColor = AppConstants.Colors.white
         field.textAlignment = .left
         field.delegate = self
 

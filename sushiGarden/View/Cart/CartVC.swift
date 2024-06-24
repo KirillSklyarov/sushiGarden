@@ -13,7 +13,7 @@ final class CartVC: BaseViewController {
         let label = UILabel()
         label.text = "Корзина"
         label.font = AppConstants.Fonts.bold28
-        label.textColor = AppConstants.Colors.titleWhite
+        label.textColor = AppConstants.Colors.white
         return label
     }()
 
@@ -61,7 +61,7 @@ final class CartVC: BaseViewController {
         let label = UILabel()
         label.text = "Добавить еще"
         label.font = AppConstants.Fonts.bold16
-        label.textColor = AppConstants.Colors.titleWhite
+        label.textColor = AppConstants.Colors.white
         return label
     }()
 
@@ -111,7 +111,7 @@ final class CartVC: BaseViewController {
 
     private func setupNavigation() {
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = AppConstants.Colors.backgroundBlack
+        appearance.backgroundColor = AppConstants.Colors.background
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.standardAppearance = appearance

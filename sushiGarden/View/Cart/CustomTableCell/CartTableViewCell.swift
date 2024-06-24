@@ -21,7 +21,7 @@ final class CartTableViewCell: UITableViewCell {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = AppConstants.Fonts.bold16
-        label.textColor = AppConstants.Colors.titleWhite
+        label.textColor = AppConstants.Colors.white
         label.numberOfLines = 1
         return label
     }()
@@ -29,7 +29,7 @@ final class CartTableViewCell: UITableViewCell {
     private lazy var priceLabel: UILabel = {
         let label = UILabel()
         label.font = AppConstants.Fonts.bold16
-        label.textColor = AppConstants.Colors.titleWhite
+        label.textColor = AppConstants.Colors.white
         return label
     }()
 

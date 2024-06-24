@@ -14,12 +14,13 @@ struct AppConstants {
     }
 
     struct Colors {
-        static let backgroundBlack = UIColor(hexString: "000000")
-        static let titleWhite = UIColor(hexString: "FFFFFF")
-        static let textBlack = UIColor(hexString: "0F0F11")
+        static let background = UIColor(hexString: "000000")
+        static let white = UIColor(hexString: "FFFFFF")
+        static let red = UIColor(hexString: "C2182E")
+        static let black = UIColor(hexString: "0F0F11")
+
         static let textFieldGray = UIColor(hexString: "F0F5FA")
         static let agreementGray = UIColor(hexString: "7E8A97")
-        static let buttonRed = UIColor(hexString: "C2182E")
         static let textDarkGray = UIColor(hexString: "646982")
         static let tabBarGray = UIColor(hexString: "4C4C4C")
         static let catalogueGray = UIColor(hexString: "5F5F5F")

@@ -19,7 +19,7 @@ extension UIView {
     func setupEnterButton() -> UIButton {
         let button = UIButton()
         button.setTitle("Войти".uppercased(), for: .normal)
-        button.backgroundColor = AppConstants.Colors.buttonRed
+        button.backgroundColor = AppConstants.Colors.red
         button.titleLabel?.font = AppConstants.Fonts.bold16
         button.heightAnchor.constraint(equalToConstant: 71).isActive = true
         button.layer.cornerRadius = 14

@@ -9,9 +9,9 @@ import UIKit
 
 final class AddressVC: BaseViewController {
 
-    private lazy var addressTitleLabel = AddressLabel(title: "Адрес")
-    private lazy var personalTitleLabel = AddressLabel(title: "Кому")
-    private lazy var paymentTitleLabel = AddressLabel(title: "Оплата")
+    private lazy var addressTitleLabel = AddressHeaderLabel(title: "Адрес")
+    private lazy var personalTitleLabel = AddressHeaderLabel(title: "Кому")
+    private lazy var paymentTitleLabel = AddressHeaderLabel(title: "Оплата")
 
     private lazy var streetTextField = AddressTextFieldView(placeholderText: "Город, улица")
     private lazy var blockTextField = AddressTextFieldView(placeholderText: "Корпус")
@@ -24,6 +24,13 @@ final class AddressVC: BaseViewController {
     private lazy var emailTextField = AddressTextFieldView(placeholderText: "Почта")
 
     private lazy var paymentTextField = AddressTextFieldView(placeholderText: "")
+
+    private lazy var orderSumLabel = AddressBillLabel(title: "Сумма заказа", sum: 1640)
+    private lazy var deliverySumLabel = AddressBillLabel(title: "Доставка", sum: 76)
+    private lazy var serviceSumLabel = AddressBillLabel(title: "Сервисный сбор", sum: 0)
+    private lazy var totalSumLabel = AddressBillLabel(title: "Итого", sum: 0, titleColor: AppConstants.Colors.white, font: AppConstants.Fonts.bold16)
+
+    private lazy var confirmOrderRedButton = AppRedButton(title: "Подтвердить")
 
     private lazy var paymentPicker: UIPickerView = {
         let picker = UIPickerView()
@@ -70,29 +77,37 @@ final class AddressVC: BaseViewController {
         return stack
     }
 
+    private func setupSumStack() -> UIStackView {
+        let stack = UIStackView(arrangedSubviews: [orderSumLabel, deliverySumLabel, serviceSumLabel, totalSumLabel])
+        stack.axis = .vertical
+        stack.spacing = 20
+        return stack
+    }
+
+    private func setupPaymentPickerStack() -> UIStackView {
+        let stack = UIStackView(arrangedSubviews: [paymentTitleLabel, testPickerView])
+        stack.axis = .vertical
+        stack.spacing = 20
+        return stack
+    }
+
     private func setupUI() {
         let addressStack = setupAddressStack()
         let personalStack = setupPersonalStack()
+        let sumStack = setupSumStack()
+        let paymentPickerStack = setupPaymentPickerStack()
 
-        let contentStack = UIStackView(arrangedSubviews: [addressStack, personalStack, paymentTitleLabel])
+        let contentStack = UIStackView(arrangedSubviews: [addressStack, personalStack, paymentPickerStack, sumStack, confirmOrderRedButton])
         contentStack.axis = .vertical
-        contentStack.spacing = 30
+        contentStack.distribution = .equalSpacing
 
-//        let test = UITextField()
-//        test.inputView = paymentPicker
-
-//        paymentTextField.inputView = paymentPicker
-
-        view.addSubViews([contentStack, testPickerView])
+        view.addSubViews([contentStack])
 
         NSLayoutConstraint.activate([
             contentStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             contentStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             contentStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
-
-            testPickerView.topAnchor.constraint(equalTo: contentStack.bottomAnchor, constant: 20),
-            testPickerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            testPickerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            contentStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
         ])
     }
 }

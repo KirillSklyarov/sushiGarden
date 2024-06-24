@@ -15,7 +15,7 @@ final class RegistrationStackView: UIStackView {
         let label = UILabel()
         label.text = "Имя".uppercased()
         label.font = AppConstants.Fonts.regular15
-        label.textColor = AppConstants.Colors.textBlack
+        label.textColor = AppConstants.Colors.black
         return label
     }()
 

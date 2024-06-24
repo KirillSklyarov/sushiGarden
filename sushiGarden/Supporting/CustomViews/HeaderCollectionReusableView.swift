@@ -13,7 +13,7 @@ final class HeaderCollectionReusableView: UICollectionReusableView {
 
     private lazy var headerLabel: UILabel = {
         let label = UILabel()
-        label.textColor = AppConstants.Colors.titleWhite
+        label.textColor = AppConstants.Colors.white
         label.font = AppConstants.Fonts.bold16
         return label
     }()

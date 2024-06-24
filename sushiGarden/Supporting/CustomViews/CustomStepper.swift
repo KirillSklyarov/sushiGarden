@@ -23,7 +23,7 @@ class CustomStepper: UIStackView {
         let label = UILabel()
         label.text = "\(count)"
         label.font = AppConstants.Fonts.bold19
-        label.textColor = AppConstants.Colors.titleWhite
+        label.textColor = AppConstants.Colors.white
         label.textAlignment = .center
         return label
     }()

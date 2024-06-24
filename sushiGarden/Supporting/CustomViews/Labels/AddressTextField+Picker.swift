@@ -17,7 +17,7 @@ final class AddressTextFieldViewWithPicker: UIView {
     private lazy var addressTextField: UITextField = {
         let field = UITextField()
         field.font = AppConstants.Fonts.bold16
-        field.textColor = AppConstants.Colors.titleWhite
+        field.textColor = AppConstants.Colors.white
         field.textAlignment = .left
         field.delegate = self
 
@@ -42,7 +42,7 @@ final class AddressTextFieldViewWithPicker: UIView {
         let picker = UIPickerView()
         picker.dataSource = self
         picker.delegate = self
-        picker.backgroundColor = AppConstants.Colors.backgroundBlack
+        picker.backgroundColor = AppConstants.Colors.background
         return picker
     }()
 
@@ -84,7 +84,7 @@ final class AddressTextFieldViewWithPicker: UIView {
         addressTextField.text = selectedTitle.name
 
         let imageName = paymentMethods[selectedIndex].imageName
-        let image = UIImage(systemName: imageName)?.withTintColor(AppConstants.Colors.titleWhite, renderingMode: .alwaysOriginal)
+        let image = UIImage(systemName: imageName)?.withTintColor(AppConstants.Colors.white, renderingMode: .alwaysOriginal)
         let imageView = UIImageView(image: image)
         imageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         imageView.contentMode = .left
@@ -119,14 +119,14 @@ extension AddressTextFieldViewWithPicker: UIPickerViewDataSource, UIPickerViewDe
 
         let imageView = UIImageView()
         let imageName = paymentMethods[row].imageName
-        let image = UIImage(systemName: imageName)?.withTintColor(AppConstants.Colors.titleWhite, renderingMode: .alwaysOriginal)
+        let image = UIImage(systemName: imageName)?.withTintColor(AppConstants.Colors.white, renderingMode: .alwaysOriginal)
         imageView.contentMode = .center
         imageView.image = image
 
         let label = UILabel()
         label.text = paymentMethods[row].name
         label.font = AppConstants.Fonts.regular16
-        label.textColor = AppConstants.Colors.titleWhite
+        label.textColor = AppConstants.Colors.white
 
         let stack = UIStackView(arrangedSubviews: [imageView, label])
         stack.axis = .horizontal

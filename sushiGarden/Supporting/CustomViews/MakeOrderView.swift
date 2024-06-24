@@ -13,7 +13,7 @@ final class MakeOrderView: UIView {
         let label = UILabel()
         label.text = "Оформить заказ"
         label.font = AppConstants.Fonts.bold18
-        label.textColor = AppConstants.Colors.titleWhite
+        label.textColor = AppConstants.Colors.white
         return label
     }()
 
@@ -21,7 +21,7 @@ final class MakeOrderView: UIView {
         let label = UILabel()
         label.text = "1680 $"
         label.font = AppConstants.Fonts.bold18
-        label.textColor = AppConstants.Colors.titleWhite
+        label.textColor = AppConstants.Colors.white
         return label
     }()
 
@@ -35,7 +35,7 @@ final class MakeOrderView: UIView {
     }
 
     func setupButtonStackView() {
-        backgroundColor = AppConstants.Colors.buttonRed
+        backgroundColor = AppConstants.Colors.red
         layer.cornerRadius = 17
         clipsToBounds = true
 

@@ -44,7 +44,7 @@ class DetailViewController: BaseViewController {
             let label = UILabel()
             label.text = desc
             label.font = AppConstants.Fonts.regular14
-            label.textColor = AppConstants.Colors.titleWhite
+            label.textColor = AppConstants.Colors.white
             label.textAlignment = .left
             label.numberOfLines = 0
             return label

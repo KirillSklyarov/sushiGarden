@@ -21,7 +21,7 @@ final class ExtrasTableViewCell: UITableViewCell {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = AppConstants.Fonts.bold14
-        label.textColor = AppConstants.Colors.titleWhite
+        label.textColor = AppConstants.Colors.white
         label.numberOfLines = 1
         return label
     }()
@@ -38,7 +38,7 @@ final class ExtrasTableViewCell: UITableViewCell {
         button.setTitle("₽", for: .normal)
         button.titleLabel?.font = AppConstants.Fonts.bold19
         button.backgroundColor = AppConstants.Colors.detailDarkGray
-        button.titleLabel?.textColor = AppConstants.Colors.titleWhite
+        button.titleLabel?.textColor = AppConstants.Colors.white
         button.layer.cornerRadius = 12
         button.clipsToBounds = true
         return button

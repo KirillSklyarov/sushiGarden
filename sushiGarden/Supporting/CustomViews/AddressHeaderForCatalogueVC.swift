@@ -27,7 +27,7 @@ final class addressHeaderForCatalogueVC: UIView {
         let label = UILabel()
         label.text = "Воронеж, Мира, 36"
         label.font = AppConstants.Fonts.bold16
-        label.textColor = AppConstants.Colors.titleWhite
+        label.textColor = AppConstants.Colors.white
         return label
     }()
 

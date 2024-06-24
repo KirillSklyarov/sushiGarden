@@ -13,13 +13,13 @@ final class RegistrationVC: BaseViewController {
         let label = UILabel()
         label.text = "Регистрация"
         label.font = AppConstants.Fonts.bold34
-        label.textColor = AppConstants.Colors.titleWhite
+        label.textColor = AppConstants.Colors.white
         return label
     }()
 
     private lazy var registrationView: UIView = {
         let view = UIView()
-        view.backgroundColor = AppConstants.Colors.titleWhite
+        view.backgroundColor = AppConstants.Colors.white
         view.layer.cornerRadius = 27
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view.clipsToBounds = true
@@ -54,7 +54,7 @@ final class RegistrationVC: BaseViewController {
         let button = UIButton()
         button.setTitle("Войти".uppercased(), for: .normal)
         button.titleLabel?.font = AppConstants.Fonts.bold16
-        button.setTitleColor(AppConstants.Colors.buttonRed, for: .normal)
+        button.setTitleColor(AppConstants.Colors.red, for: .normal)
         return button
     }()
 

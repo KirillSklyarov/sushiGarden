@@ -13,13 +13,13 @@ final class EnterVC: BaseViewController {
         let label = UILabel()
         label.text = "Войти"
         label.font = AppConstants.Fonts.bold34
-        label.textColor = AppConstants.Colors.titleWhite
+        label.textColor = AppConstants.Colors.white
         return label
     }()
 
     private lazy var registrationView: UIView = {
         let view = UIView()
-        view.backgroundColor = AppConstants.Colors.titleWhite
+        view.backgroundColor = AppConstants.Colors.white
         view.layer.cornerRadius = 27
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view.clipsToBounds = true
