@@ -59,7 +59,7 @@ class DetailViewController: BaseViewController {
 
     private func setupContentStack() -> UIStackView {
         let nameStack = NameAndWeightStack(name: sushiDetailData.name, weight: sushiDetailData.weight, price: sushiDetailData.price, nameFontSize: .bold19, secondaryLabel: .price)
-        let counter = CustomStepper()
+        let counter = CustomStepper(width: 171)
 
         let nameAndStepperStack = UIStackView(arrangedSubviews: [nameStack, counter])
         nameAndStepperStack.axis = .horizontal

@@ -44,9 +44,9 @@ class CustomStepper: UIStackView {
         return button
     }()
 
-    init() {
+    init(width: Int) {
         super.init(frame: .zero)
-        setupCustomStepper()
+        setupCustomStepper(width: width)
     }
 
     required init(coder: NSCoder) {
@@ -54,15 +54,17 @@ class CustomStepper: UIStackView {
     }
 
     @objc private func minusButtonTapped(sender: UIButton) {
+        print("------")
         count -= 1
     }
 
     @objc private func plusButtonTapped(sender: UIButton) {
+        print("+++++")
         count += 1
     }
 
 
-    func setupCustomStepper() {
+    func setupCustomStepper(width: Int) {
         addArrangedSubview(minusButton)
         addArrangedSubview(countLabel)
         addArrangedSubview(plusButton)
@@ -72,6 +74,7 @@ class CustomStepper: UIStackView {
         layer.cornerRadius = 12
         clipsToBounds = true
 
-        widthAnchor.constraint(equalToConstant: 177).isActive = true
+        heightAnchor.constraint(equalToConstant: 33).isActive = true
+        widthAnchor.constraint(equalToConstant: CGFloat(width)).isActive = true
     }
 }

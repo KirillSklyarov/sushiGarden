@@ -7,13 +7,6 @@
 
 import UIKit
 
-struct sushiDetail {
-    let name: String
-    let weight: Int
-    let price: Int
-    let photoName: String
-}
-
 class CatalogueVC: BaseViewController {
 
     private lazy var collectionView: UICollectionView = {

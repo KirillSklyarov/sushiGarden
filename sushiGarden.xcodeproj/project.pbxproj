@@ -14,6 +14,13 @@
 		73086BF52C2615B50052472C /* NameAndWeightStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BF42C2615B50052472C /* NameAndWeightStack.swift */; };
 		73086BF72C26C17A0052472C /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BF62C26C17A0052472C /* CustomStepper.swift */; };
 		73086BF92C27097C0052472C /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BF82C27097C0052472C /* HeaderCollectionReusableView.swift */; };
+		73086BFC2C2716EA0052472C /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BFB2C2716EA0052472C /* CartTableViewCell.swift */; };
+		73086BFE2C2801410052472C /* ExtrasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BFD2C2801410052472C /* ExtrasTableViewCell.swift */; };
+		73086C002C280A010052472C /* SushiDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086BFF2C280A010052472C /* SushiDetail.swift */; };
+		73086C022C280A1B0052472C /* ExtrasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73086C012C280A1B0052472C /* ExtrasData.swift */; };
+		7377FE572C284D86002CB450 /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377FE562C284D86002CB450 /* HeaderTableView.swift */; };
+		7377FE592C285941002CB450 /* makeOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377FE582C285941002CB450 /* makeOrderView.swift */; };
+		7377FE5B2C287F3D002CB450 /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377FE5A2C287F3D002CB450 /* AddressVC.swift */; };
 		73D989C52C2423950086484B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C42C2423950086484B /* AppDelegate.swift */; };
 		73D989C72C2423950086484B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C62C2423950086484B /* SceneDelegate.swift */; };
 		73D989C92C2423950086484B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C82C2423950086484B /* TabBarController.swift */; };
@@ -46,6 +53,13 @@
 		73086BF42C2615B50052472C /* NameAndWeightStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameAndWeightStack.swift; sourceTree = "<group>"; };
 		73086BF62C26C17A0052472C /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
 		73086BF82C27097C0052472C /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		73086BFB2C2716EA0052472C /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		73086BFD2C2801410052472C /* ExtrasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrasTableViewCell.swift; sourceTree = "<group>"; };
+		73086BFF2C280A010052472C /* SushiDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SushiDetail.swift; sourceTree = "<group>"; };
+		73086C012C280A1B0052472C /* ExtrasData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrasData.swift; sourceTree = "<group>"; };
+		7377FE562C284D86002CB450 /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
+		7377FE582C285941002CB450 /* makeOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeOrderView.swift; sourceTree = "<group>"; };
+		7377FE5A2C287F3D002CB450 /* AddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVC.swift; sourceTree = "<group>"; };
 		73D989C12C2423950086484B /* sushiGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sushiGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73D989C42C2423950086484B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73D989C62C2423950086484B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +105,14 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		73086BFA2C2716320052472C /* CustomTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				73086BFB2C2716EA0052472C /* CartTableViewCell.swift */,
+			);
+			path = CustomTableCell;
+			sourceTree = "<group>";
+		};
 		73D989B82C2423950086484B = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +144,8 @@
 		73D989D82C2423B10086484B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				73086BFF2C280A010052472C /* SushiDetail.swift */,
+				73086C012C280A1B0052472C /* ExtrasData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +243,7 @@
 		73ED7FD52C2438AB00F84EBC /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				7377FE582C285941002CB450 /* makeOrderView.swift */,
 				73ED7FD62C2438D600F84EBC /* RegistrationStackView.swift */,
 				73ED7FDA2C247E1800F84EBC /* CustomButtonStack.swift */,
 				73ED7FEC2C256A1E00F84EBC /* AddressHeaderForCatalogueVC.swift */,
@@ -228,6 +253,8 @@
 				73086BF42C2615B50052472C /* NameAndWeightStack.swift */,
 				73086BF62C26C17A0052472C /* CustomStepper.swift */,
 				73086BF82C27097C0052472C /* HeaderCollectionReusableView.swift */,
+				7377FE562C284D86002CB450 /* HeaderTableView.swift */,
+				73086BFD2C2801410052472C /* ExtrasTableViewCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -267,7 +294,9 @@
 		73ED7FE62C2486A800F84EBC /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				73086BFA2C2716320052472C /* CustomTableCell */,
 				73ED7FE72C2486B200F84EBC /* CartVC.swift */,
+				7377FE5A2C287F3D002CB450 /* AddressVC.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -351,6 +380,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73086C022C280A1B0052472C /* ExtrasData.swift in Sources */,
+				7377FE5B2C287F3D002CB450 /* AddressVC.swift in Sources */,
 				73ED7FDF2C24861100F84EBC /* CatalogueVC.swift in Sources */,
 				73ED7FE52C24868D00F84EBC /* OrdersVC.swift in Sources */,
 				73086BF32C25D9910052472C /* DetailViewController.swift in Sources */,
@@ -358,16 +389,21 @@
 				73ED7FED2C256A1E00F84EBC /* AddressHeaderForCatalogueVC.swift in Sources */,
 				73086BF52C2615B50052472C /* NameAndWeightStack.swift in Sources */,
 				73ED7FE82C2486B200F84EBC /* CartVC.swift in Sources */,
+				7377FE572C284D86002CB450 /* HeaderTableView.swift in Sources */,
 				73086BEE2C258E410052472C /* CatNamesCollectionViewCell.swift in Sources */,
+				7377FE592C285941002CB450 /* makeOrderView.swift in Sources */,
 				73ED7FCA2C24268800F84EBC /* UIColor+Ext.swift in Sources */,
 				73ED7FD42C24321B00F84EBC /* UIView+Ext.swift in Sources */,
+				73086C002C280A010052472C /* SushiDetail.swift in Sources */,
 				73ED7FD92C24796B00F84EBC /* EnterVC.swift in Sources */,
 				73ED7FC42C2424B600F84EBC /* MainPresenter.swift in Sources */,
+				73086BFC2C2716EA0052472C /* CartTableViewCell.swift in Sources */,
 				73D989C92C2423950086484B /* TabBarController.swift in Sources */,
 				73086BF02C25C25E0052472C /* DetailCollectionViewCell.swift in Sources */,
 				73ED7FCF2C2429B600F84EBC /* RegistrationVC.swift in Sources */,
 				73086BF72C26C17A0052472C /* CustomStepper.swift in Sources */,
 				73D989C52C2423950086484B /* AppDelegate.swift in Sources */,
+				73086BFE2C2801410052472C /* ExtrasTableViewCell.swift in Sources */,
 				73ED7FDB2C247E1800F84EBC /* CustomButtonStack.swift in Sources */,
 				73086BF92C27097C0052472C /* HeaderCollectionReusableView.swift in Sources */,
 				73ED7FEB2C2486DA00F84EBC /* ProfileVC.swift in Sources */,

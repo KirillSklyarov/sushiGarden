@@ -94,6 +94,5 @@ final class DetailCollectionViewCell: UICollectionViewCell {
         sushiNameLabel.text = name
         sushiWeightLabel.text = weightTitle
         priceButton.setTitle(priceTitle, for: .normal)
-
     }
 }
