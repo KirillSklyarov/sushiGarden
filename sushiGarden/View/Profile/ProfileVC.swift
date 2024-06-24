@@ -14,6 +14,8 @@ final class ProfileVC: BaseViewController {
         ProfileTableModel(name: "Карты", imageName: "card")
     ]
 
+    let ordersID = ["111", "222", "333"]
+
     private lazy var profilePhoto: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "photo"))
         imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
@@ -23,7 +25,7 @@ final class ProfileVC: BaseViewController {
     private lazy var nameLabel = WhiteBoldTitleLabel(title: "Александр Новиков")
     private lazy var emailLabel = GrayRegularLabel(title: "anovikov@gmail.com")
 
-    private lazy var ordersView = ProfileOrdersView()
+    private lazy var ordersView = ProfileOrdersView(ordersID: ordersID)
 
     private lazy var profileCardsTable: UITableView = {
         let table = UITableView()
@@ -65,7 +67,6 @@ final class ProfileVC: BaseViewController {
 
             leaveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             leaveButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
-
         ])
     }
 }
