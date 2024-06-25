@@ -12,7 +12,7 @@ final class RegistrationStackView: UIStackView {
     let textfieldHeight = CGFloat(60)
     var textFieldText = ""
 
-    private lazy var headerLabel: UILabel = {
+    lazy var headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Имя".uppercased()
         label.font = AppConstants.Fonts.regular16

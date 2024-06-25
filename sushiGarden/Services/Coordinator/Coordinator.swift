@@ -35,7 +35,7 @@ final class Coordinator {
             case .editCards: ScreenFactory.createScreen(.editCards)
             case .sushiDetail: ScreenFactory.createScreen(.sushiDetail)
             case .tabBar: ScreenFactory.createScreen(.tabBarController)
-            case .logIn: ScreenFactory.createScreen(.logIn)
+            case .logIn: ScreenFactory.createScreen(.logIn, coordinator: self)
             }
         }()
 

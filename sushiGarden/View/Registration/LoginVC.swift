@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class LoginVC: BaseViewController {
 
@@ -42,6 +43,15 @@ final class LoginVC: BaseViewController {
     // MARK: - UI Properties
     var coordinator: Coordinator?
 
+    init(coordinator: Coordinator? = nil) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -52,6 +62,49 @@ final class LoginVC: BaseViewController {
     }
 
     @objc private func enterButtonTapped(_ sender: UIButton) {
+        if isAllFieldsFilled() {
+            let email = emailStack.textFieldText
+            let password = passwordStack.textFieldText
+            loginUser(withEmail: email, password: password)
+        } else {
+            ProgressIndicator.succeed()
+            let emptyFields = emptyFields()
+            self.showAlert(emptyFields: emptyFields)
+        }
+    }
+
+    private func emptyFields() -> String {
+        var array = [String]()
+        let stacks = [emailStack, passwordStack]
+        stacks.forEach {
+            if $0.textFieldText.isEmpty {
+                array.append($0.headerLabel.text ?? "")
+            }
+        }
+        let arrayToString = array.joined(separator: ", ")
+
+        return arrayToString
+    }
+
+    private func isAllFieldsFilled() -> Bool {
+        return !emailStack.textFieldText.isEmpty &&
+               !passwordStack.textFieldText.isEmpty
+    }
+
+    private func loginUser(withEmail: String, password: String) {
+        ProgressIndicator.show()
+        Auth.auth().signIn(withEmail: withEmail, password: password) { [weak self] AuthDataResult, error in
+            guard let self else { print("Aauuch"); return }
+            if let error {
+                print("Failed to login user: \(error.localizedDescription)")
+            } else {
+                ProgressIndicator.succeed()
+                print("User logged in successfully")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.coordinator?.changeRootVCToTabBar()
+                }
+            }
+        }
     }
 
     private func setupUI() {
@@ -62,7 +115,6 @@ final class LoginVC: BaseViewController {
         let buttonsStack = UIStackView(arrangedSubviews: [enterButton, isHaveAccount])
         buttonsStack.axis = .vertical
         buttonsStack.spacing = 20
-
 
         let contentStack = UIStackView(arrangedSubviews: [textFieldsStack, buttonsStack])
         contentStack.axis = .vertical

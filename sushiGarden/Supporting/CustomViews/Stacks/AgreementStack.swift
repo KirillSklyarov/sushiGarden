@@ -26,6 +26,8 @@ final class AgreementStack: UIStackView {
         let selectedButtonImage = buttonImage?.withTintColor(AppConstants.Colors.red)
         button.setImage(selectedButtonImage, for: .selected)
         button.addTarget(self, action: #selector(agreementButtonTapped), for: .touchUpInside)
+        button.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 24).isActive = true
         return button
     }()
 
@@ -42,6 +44,7 @@ final class AgreementStack: UIStackView {
         addArrangedSubview(agreementButton)
         addArrangedSubview(agreementLabel)
         axis = .horizontal
+        alignment = .center
         spacing = 23
     }
 

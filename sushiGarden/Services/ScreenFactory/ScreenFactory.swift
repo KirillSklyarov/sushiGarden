@@ -23,7 +23,7 @@ enum Screens {
 
 final class ScreenFactory {
 
-    static func createScreen(_ screen: Screens) -> UIViewController {
+    static func createScreen(_ screen: Screens, coordinator: Coordinator? = nil) -> UIViewController {
 
         switch screen {
         case .tabBarController:
@@ -35,7 +35,7 @@ final class ScreenFactory {
             viewController.coordinator = coordinator
             return navController
         case .logIn:
-            let viewController = LoginVC()
+            let viewController = LoginVC(coordinator: coordinator)
             return viewController
         case .catalogue:
             let viewController = CatalogueVC()

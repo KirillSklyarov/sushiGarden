@@ -58,11 +58,31 @@ final class RegistrationVC: BaseViewController {
             let email = emailStack.textFieldText
             let password = passwordStack.textFieldText
             registration(withEmail: email, password: password)
+        } else {
+            let emptyFields = emptyFields()
+            self.showAlert(emptyFields: emptyFields)
         }
     }
 
     @objc private func haveAccountButtonTapped(_ sender: UITapGestureRecognizer) {
         coordinator?.goToScreen(.logIn)
+    }
+
+    private func emptyFields() -> String {
+        var array = [String]()
+        let stacks = [nameStack, emailStack, passwordStack]
+        stacks.forEach {
+            if $0.textFieldText.isEmpty {
+                array.append($0.headerLabel.text ?? "")
+            }
+        }
+        if agreementStack.isSelected == false {
+            array.append("Политика и условия")
+        }
+
+        let arrayToString = array.joined(separator: ", ")
+
+        return arrayToString
     }
 
     // MARK: - Private methods
