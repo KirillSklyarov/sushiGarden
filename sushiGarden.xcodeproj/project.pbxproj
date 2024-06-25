@@ -35,6 +35,11 @@
 		73A29BE32C2AB14F00F87ABA /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A29BE22C2AB14F00F87ABA /* EditProfileVC.swift */; };
 		73A29BE52C2AB38300F87ABA /* EditCardsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A29BE42C2AB38300F87ABA /* EditCardsVC.swift */; };
 		73A29BE72C2AC10E00F87ABA /* ScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A29BE62C2AC10E00F87ABA /* ScreenFactory.swift */; };
+		73A29BEC2C2ACBB300F87ABA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 73A29BEB2C2ACBB300F87ABA /* FirebaseAuth */; };
+		73A29BEE2C2ACBB300F87ABA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 73A29BED2C2ACBB300F87ABA /* FirebaseFirestore */; };
+		73A29BF02C2ACD3300F87ABA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73A29BEF2C2ACD3200F87ABA /* GoogleService-Info.plist */; };
+		73A29BF42C2AFB2600F87ABA /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A29BF32C2AFB2600F87ABA /* UserData.swift */; };
+		73A29BF72C2B00C000F87ABA /* AgreementStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A29BF62C2B00C000F87ABA /* AgreementStack.swift */; };
 		73D989C52C2423950086484B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C42C2423950086484B /* AppDelegate.swift */; };
 		73D989C72C2423950086484B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C62C2423950086484B /* SceneDelegate.swift */; };
 		73D989C92C2423950086484B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C82C2423950086484B /* TabBarController.swift */; };
@@ -49,7 +54,7 @@
 		73ED7FD22C242DEB00F84EBC /* Sen-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73ED7FD12C242C8A00F84EBC /* Sen-VariableFont_wght.ttf */; };
 		73ED7FD42C24321B00F84EBC /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FD32C24321B00F84EBC /* UIView+Ext.swift */; };
 		73ED7FD72C2438D600F84EBC /* RegistrationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FD62C2438D600F84EBC /* RegistrationStackView.swift */; };
-		73ED7FD92C24796B00F84EBC /* EnterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FD82C24796B00F84EBC /* EnterVC.swift */; };
+		73ED7FD92C24796B00F84EBC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FD82C24796B00F84EBC /* LoginVC.swift */; };
 		73ED7FDB2C247E1800F84EBC /* CustomButtonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FDA2C247E1800F84EBC /* CustomButtonStack.swift */; };
 		73ED7FDF2C24861100F84EBC /* CatalogueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FDE2C24861000F84EBC /* CatalogueVC.swift */; };
 		73ED7FE22C24866E00F84EBC /* PromoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED7FE12C24866E00F84EBC /* PromoVC.swift */; };
@@ -88,6 +93,9 @@
 		73A29BE22C2AB14F00F87ABA /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		73A29BE42C2AB38300F87ABA /* EditCardsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardsVC.swift; sourceTree = "<group>"; };
 		73A29BE62C2AC10E00F87ABA /* ScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFactory.swift; sourceTree = "<group>"; };
+		73A29BEF2C2ACD3200F87ABA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73A29BF32C2AFB2600F87ABA /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		73A29BF62C2B00C000F87ABA /* AgreementStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementStack.swift; sourceTree = "<group>"; };
 		73D989C12C2423950086484B /* sushiGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sushiGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73D989C42C2423950086484B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73D989C62C2423950086484B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +112,7 @@
 		73ED7FD12C242C8A00F84EBC /* Sen-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sen-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		73ED7FD32C24321B00F84EBC /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		73ED7FD62C2438D600F84EBC /* RegistrationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationStackView.swift; sourceTree = "<group>"; };
-		73ED7FD82C24796B00F84EBC /* EnterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterVC.swift; sourceTree = "<group>"; };
+		73ED7FD82C24796B00F84EBC /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		73ED7FDA2C247E1800F84EBC /* CustomButtonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStack.swift; sourceTree = "<group>"; };
 		73ED7FDE2C24861000F84EBC /* CatalogueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueVC.swift; sourceTree = "<group>"; };
 		73ED7FE12C24866E00F84EBC /* PromoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoVC.swift; sourceTree = "<group>"; };
@@ -119,6 +127,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A29BEC2C2ACBB300F87ABA /* FirebaseAuth in Frameworks */,
+				73A29BEE2C2ACBB300F87ABA /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +196,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		73A29BF52C2B00B200F87ABA /* Stacks */ = {
+			isa = PBXGroup;
+			children = (
+				73A29BF62C2B00C000F87ABA /* AgreementStack.swift */,
+			);
+			path = Stacks;
+			sourceTree = "<group>";
+		};
 		73D989B82C2423950086484B = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +239,7 @@
 				73086C012C280A1B0052472C /* ExtrasData.swift */,
 				734A5C862C299600000F93E7 /* PaymentsMethods.swift */,
 				734A5C942C29F263000F93E7 /* ProfileTableModel.swift */,
+				73A29BF32C2AFB2600F87ABA /* UserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +276,7 @@
 				73ED7FC52C24263000F84EBC /* Constants */,
 				73D989C42C2423950086484B /* AppDelegate.swift */,
 				73D989C62C2423950086484B /* SceneDelegate.swift */,
+				73A29BEF2C2ACD3200F87ABA /* GoogleService-Info.plist */,
 				73D989CD2C2423970086484B /* Assets.xcassets */,
 				73D989CF2C2423970086484B /* LaunchScreen.storyboard */,
 				73D989D22C2423970086484B /* Info.plist */,
@@ -303,7 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				73ED7FCE2C2429B600F84EBC /* RegistrationVC.swift */,
-				73ED7FD82C24796B00F84EBC /* EnterVC.swift */,
+				73ED7FD82C24796B00F84EBC /* LoginVC.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -319,6 +339,7 @@
 		73ED7FD52C2438AB00F84EBC /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				73A29BF52C2B00B200F87ABA /* Stacks */,
 				734A5C8A2C29DC10000F93E7 /* Buttons */,
 				734A5C812C29745F000F93E7 /* Labels */,
 				7377FE582C285941002CB450 /* MakeOrderView.swift */,
@@ -407,6 +428,10 @@
 			dependencies = (
 			);
 			name = sushiGarden;
+			packageProductDependencies = (
+				73A29BEB2C2ACBB300F87ABA /* FirebaseAuth */,
+				73A29BED2C2ACBB300F87ABA /* FirebaseFirestore */,
+			);
 			productName = sushiGarden;
 			productReference = 73D989C12C2423950086484B /* sushiGarden.app */;
 			productType = "com.apple.product-type.application";
@@ -435,6 +460,9 @@
 				Base,
 			);
 			mainGroup = 73D989B82C2423950086484B;
+			packageReferences = (
+				73A29BEA2C2ACBB300F87ABA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 73D989C22C2423950086484B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -452,6 +480,7 @@
 				73ED7FD22C242DEB00F84EBC /* Sen-VariableFont_wght.ttf in Resources */,
 				73D989CE2C2423970086484B /* Assets.xcassets in Resources */,
 				73D989D12C2423970086484B /* Base in Resources */,
+				73A29BF02C2ACD3300F87ABA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +501,7 @@
 				73ED7FED2C256A1E00F84EBC /* AddressHeaderForCatalogueVC.swift in Sources */,
 				73086BF52C2615B50052472C /* NameAndWeightStack.swift in Sources */,
 				73ED7FE82C2486B200F84EBC /* CartVC.swift in Sources */,
+				73A29BF42C2AFB2600F87ABA /* UserData.swift in Sources */,
 				7377FE572C284D86002CB450 /* HeaderTableView.swift in Sources */,
 				73086BEE2C258E410052472C /* CatNamesCollectionViewCell.swift in Sources */,
 				734A5C892C29D675000F93E7 /* AddressBillLabel.swift in Sources */,
@@ -483,7 +513,7 @@
 				73ED7FD42C24321B00F84EBC /* UIView+Ext.swift in Sources */,
 				73086C002C280A010052472C /* SushiDetail.swift in Sources */,
 				73A29BE52C2AB38300F87ABA /* EditCardsVC.swift in Sources */,
-				73ED7FD92C24796B00F84EBC /* EnterVC.swift in Sources */,
+				73ED7FD92C24796B00F84EBC /* LoginVC.swift in Sources */,
 				73ED7FC42C2424B600F84EBC /* MainPresenter.swift in Sources */,
 				73086BFC2C2716EA0052472C /* CartTableViewCell.swift in Sources */,
 				73D989C92C2423950086484B /* TabBarController.swift in Sources */,
@@ -496,6 +526,7 @@
 				734A5C8C2C29DC1B000F93E7 /* AppRedButton.swift in Sources */,
 				73086BFE2C2801410052472C /* ExtrasTableViewCell.swift in Sources */,
 				734A5C872C299600000F93E7 /* PaymentsMethods.swift in Sources */,
+				73A29BF72C2B00C000F87ABA /* AgreementStack.swift in Sources */,
 				73ED7FDB2C247E1800F84EBC /* CustomButtonStack.swift in Sources */,
 				734A5C8E2C29ED55000F93E7 /* GrayRegularLabel.swift in Sources */,
 				73086BF92C27097C0052472C /* HeaderCollectionReusableView.swift in Sources */,
@@ -731,6 +762,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		73A29BEA2C2ACBB300F87ABA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		73A29BEB2C2ACBB300F87ABA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A29BEA2C2ACBB300F87ABA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		73A29BED2C2ACBB300F87ABA /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A29BEA2C2ACBB300F87ABA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 73D989B92C2423950086484B /* Project object */;
 }

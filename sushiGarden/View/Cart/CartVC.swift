@@ -21,7 +21,7 @@ final class CartVC: BaseViewController {
         let label = UILabel()
         label.text = "3 позиции / 630 гр."
         label.font = AppConstants.Fonts.regular16
-        label.textColor = AppConstants.Colors.tabBarGray
+        label.textColor = AppConstants.Colors.darkGray
         return label
     }()
 

@@ -13,15 +13,18 @@ final class CustomButtonStack: UIStackView {
         let label = UILabel()
         label.font = AppConstants.Fonts.regular18
         label.textColor = AppConstants.Colors.darkGray
+        label.textAlignment = .center
         label.numberOfLines = 0
         return label
     }()
 
-    private lazy var accountButton: UIButton = {
-        let button = UIButton()
-        button.titleLabel?.font = AppConstants.Fonts.bold16
-        button.setTitleColor(AppConstants.Colors.red, for: .normal)
-        return button
+    private lazy var redLabel: UILabel = {
+        let label = UILabel()
+        label.font = AppConstants.Fonts.bold19
+        label.textColor = AppConstants.Colors.red
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
     }()
 
     init(haveAccount: Bool) {
@@ -33,35 +36,32 @@ final class CustomButtonStack: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var enterButton = setupEnterButton()
-
-    func setup() -> UIView {
-        let haveAccountStack = UIStackView(arrangedSubviews: [haveAccountLabel, accountButton])
-        haveAccountStack.axis = .horizontal
+    func setupContentStack() -> UIView {
+        let haveAccountStack = UIStackView(arrangedSubviews: [haveAccountLabel, redLabel])
+        haveAccountStack.axis = .vertical
         haveAccountStack.spacing = 3
+
         let accountContainer = UIView()
         accountContainer.addSubViews([haveAccountStack])
 
         NSLayoutConstraint.activate([
+            haveAccountStack.topAnchor.constraint(equalTo: accountContainer.topAnchor, constant: 10),
             haveAccountStack.centerXAnchor.constraint(equalTo: accountContainer.centerXAnchor),
-            haveAccountStack.centerYAnchor.constraint(equalTo: accountContainer.centerYAnchor),
         ])
         return accountContainer
     }
 
     func setupButtonStackView(_ haveAccount: Bool) {
         if haveAccount {
-            haveAccountLabel.text = "Уже есть аккаунт?"
-            accountButton.setTitle("Войти".uppercased(), for: .normal)
-        } else {
             haveAccountLabel.text = "У вас нет аккаунта?"
-            accountButton.setTitle("Регистрация".uppercased(), for: .normal)
+            redLabel.text = "Регистрация"
+        } else {
+            haveAccountLabel.text = "Уже есть аккаунт?"
+            redLabel.text = "Войти"
         }
 
-        let accountContainer = setup()
-        addArrangedSubview(enterButton)
+        let accountContainer = setupContentStack()
+
         addArrangedSubview(accountContainer)
-        axis = .vertical
-        spacing = 28
     }
 }

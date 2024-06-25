@@ -25,17 +25,12 @@ class DetailViewController: BaseViewController {
         return image
     }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-    }
-
     private func descriptionStack() -> UIStackView {
         lazy var descriptionLabel: UILabel = {
             let label = UILabel()
             label.text = "Описание"
             label.font = AppConstants.Fonts.bold16
-            label.textColor = AppConstants.Colors.tabBarGray
+            label.textColor = AppConstants.Colors.gray
             label.textAlignment = .left
             label.numberOfLines = 1
             return label
@@ -57,16 +52,22 @@ class DetailViewController: BaseViewController {
         return stack
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
+
     private func setupContentStack() -> UIStackView {
         let nameStack = NameAndWeightStack(name: sushiDetailData.name, weight: sushiDetailData.weight, price: sushiDetailData.price, nameFontSize: .bold19, secondaryLabel: .price)
         let counter = CustomStepper(width: 171)
 
         let nameAndStepperStack = UIStackView(arrangedSubviews: [nameStack, counter])
         nameAndStepperStack.axis = .horizontal
+        nameAndStepperStack.alignment = .center
 
         let lineView: UIView = {
             let view = UIView()
-            view.backgroundColor = AppConstants.Colors.catalogueGray
+            view.backgroundColor = AppConstants.Colors.darkGray
             view.heightAnchor.constraint(equalToConstant: 1).isActive = true
             return view
         }()

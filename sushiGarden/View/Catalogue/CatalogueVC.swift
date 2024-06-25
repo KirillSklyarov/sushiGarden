@@ -7,7 +7,9 @@
 
 import UIKit
 
-class CatalogueVC: BaseViewController {
+final class CatalogueVC: BaseViewController {
+
+    var coordinator: Coordinator?
 
     private lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
@@ -29,10 +31,25 @@ class CatalogueVC: BaseViewController {
         sushiDetail(name: "Филадельфия", weight: 300, price: 800, photoName: "detail3"),
         sushiDetail(name: "Калифорния", weight: 275, price: 920, photoName: "detail4"),
     ]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigation()
         setupUI()
+    }
+
+    private func setupNavigation() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = AppConstants.Colors.background
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
+        // Убираем слово "back" со следующего экрана
+        navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
+        //  Меняем цвет шеврона back
+        navigationController?.navigationBar.tintColor = .white
     }
 
     private func createLayout() -> UICollectionViewLayout {
@@ -157,38 +174,14 @@ extension CatalogueVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let section = indexPath.section
         switch section {
-        case 2: print("Hooray")
-            let newScreen = DetailViewController()
-            let _ = UINavigationController(rootViewController: newScreen)
-            navigationController?.pushViewController(newScreen, animated: true)
+        case 2:
+            coordinator?.goToScreen(.sushiDetail)
+
+
+//            let newScreen = DetailViewController()
+//            let _ = UINavigationController(rootViewController: newScreen)
+//            navigationController?.pushViewController(newScreen, animated: true)
         default: print("nothing")
-        }
-    }
-}
-
-
-//MARK: - SwiftUI
-import SwiftUI
-struct ProviderCatalogue : PreviewProvider {
-    static var previews: some View {
-        ContainterView().edgesIgnoringSafeArea(.all)
-    }
-
-    struct ContainterView: UIViewControllerRepresentable {
-        func makeUIViewController(context: Context) -> UIViewController {
-            return CatalogueVC()
-        }
-
-        typealias UIViewControllerType = UIViewController
-
-
-        let viewController = CatalogueVC()
-        func makeUIViewController(context: UIViewControllerRepresentableContext<ProviderCatalogue.ContainterView>) -> CatalogueVC {
-            return viewController
-        }
-
-        func updateUIViewController(_ uiViewController: ProviderCatalogue.ContainterView.UIViewControllerType, context: UIViewControllerRepresentableContext<ProviderCatalogue.ContainterView>) {
-
         }
     }
 }

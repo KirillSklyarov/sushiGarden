@@ -12,7 +12,7 @@ final class GrayRegularLabel: UILabel {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = AppConstants.Fonts.regular14
-        label.textColor = AppConstants.Colors.gray
+        label.textColor = AppConstants.Colors.lightGray
         return label
     }()
 

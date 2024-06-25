@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class RegistrationVC: BaseViewController {
 
+    // MARK: - UI Properties
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Регистрация"
@@ -16,7 +18,6 @@ final class RegistrationVC: BaseViewController {
         label.textColor = AppConstants.Colors.white
         return label
     }()
-
     private lazy var registrationView: UIView = {
         let view = UIView()
         view.backgroundColor = AppConstants.Colors.white
@@ -25,65 +26,90 @@ final class RegistrationVC: BaseViewController {
         view.clipsToBounds = true
         return view
     } ()
-
-    private lazy var agreementLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Я согласен с Условиями предоставления услуг и Политикой конфиденциальности"
-        label.font = AppConstants.Fonts.regular14
-        label.textColor = AppConstants.Colors.agreementGray
-        label.numberOfLines = 0
-        return label
-    }()
-
-    private lazy var agreementButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "agreementCheckBox"), for: .normal)
+    private lazy var nameStack = RegistrationStackView(name: "Имя", placeholder: "Александр")
+    private lazy var emailStack = RegistrationStackView(name: "Почта", placeholder: "example@gmail.com")
+    private lazy var passwordStack = RegistrationStackView(name: "Пароль", placeholder: "**********")
+    private lazy var agreementStack = AgreementStack()
+    private lazy var enterButton: AppRedButton = {
+        let button = AppRedButton(title: "Зарегистрироваться", height: CGFloat(71))
+        button.addTarget(self, action: #selector(enterButtonTapped), for: .touchUpInside)
         return button
     }()
-
-    private lazy var haveAccountLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Уже есть аккаунт?"
-        label.font = AppConstants.Fonts.regular18
-        label.textColor = AppConstants.Colors.darkGray
-        label.numberOfLines = 0
-        return label
+    private lazy var isHaveAccount: CustomButtonStack = {
+        let view = CustomButtonStack(haveAccount: false)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(haveAccountButtonTapped))
+        view.addGestureRecognizer(tap)
+        view.isUserInteractionEnabled = true
+        return view
     }()
 
-    private lazy var accountButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Войти".uppercased(), for: .normal)
-        button.titleLabel?.font = AppConstants.Fonts.bold16
-        button.setTitleColor(AppConstants.Colors.red, for: .normal)
-        return button
-    }()
+    // MARK: - UI Properties
+    var coordinator: Coordinator?
 
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
 
+    // MARK: - IB Action
+    @objc private func enterButtonTapped(_ sender: UIButton) {
+        if isAllFieldsFilled() {
+            let email = emailStack.textFieldText
+            let password = passwordStack.textFieldText
+            registration(withEmail: email, password: password)
+        }
+    }
+
+    @objc private func haveAccountButtonTapped(_ sender: UITapGestureRecognizer) {
+        coordinator?.goToScreen(.logIn)
+    }
+
+    // MARK: - Private methods
+    private func registration(withEmail: String, password: String) {
+        Auth.auth().createUser(withEmail: withEmail, password: password) { [weak self] (authResult, error) in
+            guard let self else { return }
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                guard let user = authResult?.user else { print("Jopa"); return }
+                print("Пользователь \(withEmail) успешно зарегистрирован. Его ID: \(user.uid)")
+                coordinator?.changeRootVCToTabBar()
+            }
+        }
+    }
+
+    private func isAllFieldsFilled() -> Bool {
+        return !nameStack.textFieldText.isEmpty &&
+               !emailStack.textFieldText.isEmpty &&
+               !passwordStack.textFieldText.isEmpty &&
+               agreementStack.isSelected
+    }
+
     private func setupUI() {
-        let nameStack = RegistrationStackView(name: "Имя", placeholder: "Александр")
-        let emailStack = RegistrationStackView(name: "Почта", placeholder: "example@gmail.com")
-        let passwordStack = RegistrationStackView(name: "Пароль", placeholder: "**********")
+        let buttonsStack = UIStackView(arrangedSubviews: [enterButton, isHaveAccount])
+        buttonsStack.axis = .vertical
+        buttonsStack.spacing = 0
 
-        let agreementStack = UIStackView(arrangedSubviews: [agreementButton, agreementLabel])
-        agreementStack.axis = .horizontal
-        agreementStack.spacing = 23
+//        isHaveAccount.layer.borderWidth = 1
+//        isHaveAccount.layer.borderColor = UIColor.black.cgColor
 
-        let buttonStack = CustomButtonStack(haveAccount: false)
-
-        let contentStack = UIStackView(arrangedSubviews: [nameStack, emailStack, passwordStack, agreementStack, buttonStack])
+        let contentStack = UIStackView(arrangedSubviews: [nameStack, emailStack, passwordStack, agreementStack, buttonsStack])
         contentStack.axis = .vertical
-        contentStack.spacing = 28
+        contentStack.spacing = 30
 
         registrationView.addSubViews([contentStack])
 
         NSLayoutConstraint.activate([
             contentStack.topAnchor.constraint(equalTo: registrationView.topAnchor, constant: 50),
             contentStack.leadingAnchor.constraint(equalTo: registrationView.leadingAnchor, constant: 28),
-            contentStack.trailingAnchor.constraint(equalTo: registrationView.trailingAnchor, constant: -28)
+            contentStack.trailingAnchor.constraint(equalTo: registrationView.trailingAnchor, constant: -20),
+            contentStack.bottomAnchor.constraint(equalTo: registrationView.bottomAnchor, constant: -30),
+
+//            isHaveAccount.topAnchor.constraint(equalTo: enterButton.bottomAnchor, constant: 20),
+
+
+
         ])
 
         view.addSubViews([titleLabel, registrationView])
@@ -97,31 +123,5 @@ final class RegistrationVC: BaseViewController {
             registrationView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             registrationView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-    }
-}
-
-//MARK: - SwiftUI
-import SwiftUI
-struct ProviderRegistration : PreviewProvider {
-    static var previews: some View {
-        ContainterView().edgesIgnoringSafeArea(.all)
-    }
-
-    struct ContainterView: UIViewControllerRepresentable {
-        func makeUIViewController(context: Context) -> UIViewController {
-            return RegistrationVC()
-        }
-
-        typealias UIViewControllerType = UIViewController
-
-
-        let viewController = RegistrationVC()
-        func makeUIViewController(context: UIViewControllerRepresentableContext<ProviderRegistration.ContainterView>) -> RegistrationVC {
-            return viewController
-        }
-
-        func updateUIViewController(_ uiViewController: ProviderRegistration.ContainterView.UIViewControllerType, context: UIViewControllerRepresentableContext<ProviderRegistration.ContainterView>) {
-
-        }
     }
 }

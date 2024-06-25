@@ -26,7 +26,7 @@ class NameAndWeightStack: UIStackView {
     private lazy var sushiWeightLabel: UILabel = {
         let label = UILabel()
         label.font = AppConstants.Fonts.bold16
-        label.textColor = AppConstants.Colors.tabBarGray
+        label.textColor = AppConstants.Colors.gray
         label.textAlignment = .left
         label.numberOfLines = 1
         return label
@@ -35,7 +35,7 @@ class NameAndWeightStack: UIStackView {
     private lazy var sushiPriceLabel: UILabel = {
         let label = UILabel()
         label.font = AppConstants.Fonts.bold16
-        label.textColor = AppConstants.Colors.tabBarGray
+        label.textColor = AppConstants.Colors.gray
         label.textAlignment = .left
         label.numberOfLines = 1
         return label
@@ -70,7 +70,7 @@ class NameAndWeightStack: UIStackView {
         }
         
         axis = .vertical
-//        spacing = 8
+        spacing = 8
     }
 }
 

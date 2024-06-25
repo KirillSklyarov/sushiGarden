@@ -12,7 +12,7 @@ final class MakeOrderView: UIView {
     private lazy var makeOrderLabel: UILabel = {
         let label = UILabel()
         label.text = "Оформить заказ"
-        label.font = AppConstants.Fonts.bold18
+        label.font = AppConstants.Fonts.bold19
         label.textColor = AppConstants.Colors.white
         return label
     }()
@@ -20,7 +20,7 @@ final class MakeOrderView: UIView {
     private lazy var totalSumLabel: UILabel = {
         let label = UILabel()
         label.text = "1680 $"
-        label.font = AppConstants.Fonts.bold18
+        label.font = AppConstants.Fonts.bold19
         label.textColor = AppConstants.Colors.white
         return label
     }()

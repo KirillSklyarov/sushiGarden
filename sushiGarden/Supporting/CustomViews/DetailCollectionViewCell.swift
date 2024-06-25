@@ -28,7 +28,7 @@ final class DetailCollectionViewCell: UICollectionViewCell {
     private lazy var sushiWeightLabel: UILabel = {
         let label = UILabel()
         label.font = AppConstants.Fonts.bold16
-        label.textColor = AppConstants.Colors.tabBarGray
+        label.textColor = AppConstants.Colors.gray
         label.textAlignment = .left
         label.numberOfLines = 1
         return label
@@ -38,7 +38,7 @@ final class DetailCollectionViewCell: UICollectionViewCell {
         let button = UIButton()
         button.setTitle("₽", for: .normal)
         button.titleLabel?.font = AppConstants.Fonts.bold19
-        button.backgroundColor = AppConstants.Colors.detailDarkGray
+        button.backgroundColor = AppConstants.Colors.gray
         button.titleLabel?.textColor = AppConstants.Colors.white
         button.layer.cornerRadius = 12
         button.clipsToBounds = true

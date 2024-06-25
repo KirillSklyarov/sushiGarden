@@ -33,7 +33,7 @@ final class AddressTextFieldViewWithPicker: UIView {
 
     private lazy var lineView: UIView = {
         let line = UIView()
-        line.backgroundColor = AppConstants.Colors.catalogueGray
+        line.backgroundColor = AppConstants.Colors.darkGray
         line.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
         return line
     }()

@@ -9,6 +9,7 @@ import UIKit
 
 enum Screens {
     case registration
+    case logIn
     case tabBarController
     case catalogue
     case promo
@@ -17,6 +18,7 @@ enum Screens {
     case profile
     case editProfile
     case editCards
+    case sushiDetail
 }
 
 final class ScreenFactory {
@@ -27,10 +29,20 @@ final class ScreenFactory {
         case .tabBarController:
             return TabBarController()
         case .registration:
-            return RegistrationVC()
+            let viewController = RegistrationVC()
+            let navController = UINavigationController(rootViewController: viewController)
+            let coordinator = Coordinator(navController: navController)
+            viewController.coordinator = coordinator
+            return navController
+        case .logIn:
+            let viewController = LoginVC()
+            return viewController
         case .catalogue:
-            let catVC = CatalogueVC()
-            return UINavigationController(rootViewController: catVC)
+            let viewController = CatalogueVC()
+            let navController = UINavigationController(rootViewController: viewController)
+            let navManager = Coordinator(navController: navController)
+            viewController.coordinator = navManager
+            return navController
         case .promo:
             let promoVC = PromoVC()
             return UINavigationController(rootViewController: promoVC)
@@ -50,6 +62,8 @@ final class ScreenFactory {
             return EditProfileVC()
         case .editCards:
             return EditCardsVC()
+        case .sushiDetail:
+            return DetailViewController()
         }
     }
 }

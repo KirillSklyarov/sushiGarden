@@ -19,7 +19,7 @@ final class addressHeaderForCatalogueVC: UIView {
         let label = UILabel()
         label.text = "Доставка по адресу"
         label.font = AppConstants.Fonts.regular12
-        label.textColor = AppConstants.Colors.catalogueGray
+        label.textColor = AppConstants.Colors.gray
         return label
     }()
 

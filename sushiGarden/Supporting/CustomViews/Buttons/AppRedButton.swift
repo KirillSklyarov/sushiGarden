@@ -9,11 +9,12 @@ import UIKit
 
 final class AppRedButton: UIButton {
 
-    let buttonHeight = CGFloat(53)
+    var buttonHeight = CGFloat(53)
 
-    init(title: String) {
+    init(title: String, height: CGFloat = CGFloat(53)) {
         super.init(frame: .zero)
         setupRedButton(title: title)
+        heightAnchor.constraint(equalToConstant: height).isActive = true
     }
     
     required init?(coder: NSCoder) {
@@ -27,7 +28,5 @@ final class AppRedButton: UIButton {
         backgroundColor = AppConstants.Colors.red
         layer.cornerRadius = 17
         clipsToBounds = true
-
-        heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
     }
 }

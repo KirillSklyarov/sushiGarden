@@ -70,7 +70,7 @@ class CustomStepper: UIStackView {
         addArrangedSubview(plusButton)
         axis = .horizontal
         distribution = .fillEqually
-        backgroundColor = AppConstants.Colors.detailDarkGray
+        backgroundColor = AppConstants.Colors.darkGray
         layer.cornerRadius = 12
         clipsToBounds = true
 

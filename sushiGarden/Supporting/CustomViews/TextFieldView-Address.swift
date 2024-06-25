@@ -18,7 +18,7 @@ final class AddressTextFieldView: UIView {
 
         // Тут настраиваем кастомный плейхолдер
         let placeholderText = placeholderText
-        let placeholderColor = AppConstants.Colors.tabBarGray
+        let placeholderColor = AppConstants.Colors.darkGray
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: placeholderColor,
             .font: AppConstants.Fonts.regular16 ?? .systemFont(ofSize: 16)
@@ -29,7 +29,7 @@ final class AddressTextFieldView: UIView {
 
     private lazy var lineView: UIView = {
         let line = UIView()
-        line.backgroundColor = AppConstants.Colors.catalogueGray
+        line.backgroundColor = AppConstants.Colors.darkGray
         line.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
         return line
     }()

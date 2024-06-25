@@ -14,7 +14,7 @@ final class CatNamesCollectionViewCell: UICollectionViewCell {
     private lazy var categoryName: UILabel = {
         let label = UILabel()
         label.font = AppConstants.Fonts.bold16
-        label.textColor = AppConstants.Colors.tabBarGray
+        label.textColor = AppConstants.Colors.gray
         label.textAlignment = .left
         label.numberOfLines = 1
         return label

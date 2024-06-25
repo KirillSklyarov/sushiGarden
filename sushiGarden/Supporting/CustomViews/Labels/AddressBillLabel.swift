@@ -12,19 +12,19 @@ final class AddressBillLabel: UILabel {
     private lazy var addressBillLabel: UILabel = {
         let label = UILabel()
         label.font = AppConstants.Fonts.regular16
-        label.textColor = AppConstants.Colors.extrasGray
+        label.textColor = AppConstants.Colors.lightGray
         return label
     }()
 
     private lazy var sumLabel: UILabel = {
         let label = UILabel()
         label.font = AppConstants.Fonts.regular16
-        label.textColor = AppConstants.Colors.extrasGray
+        label.textColor = AppConstants.Colors.lightGray
         label.textAlignment = .right
         return label
     }()
 
-    init(title: String, sum: Int, titleColor: UIColor = AppConstants.Colors.extrasGray, font: UIFont? = AppConstants.Fonts.regular16) {
+    init(title: String, sum: Int, titleColor: UIColor = AppConstants.Colors.lightGray, font: UIFont? = AppConstants.Fonts.regular16) {
         super.init(frame: .zero)
         setupLabel(title, sum: sum)
         setupColor(titleColor: titleColor, font: font)

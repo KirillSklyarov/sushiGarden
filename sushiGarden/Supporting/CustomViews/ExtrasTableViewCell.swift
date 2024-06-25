@@ -29,7 +29,7 @@ final class ExtrasTableViewCell: UITableViewCell {
     private lazy var weightLabel: UILabel = {
         let label = UILabel()
         label.font = AppConstants.Fonts.regular14
-        label.textColor = AppConstants.Colors.extrasGray
+        label.textColor = AppConstants.Colors.lightGray
         return label
     }()
 
@@ -37,7 +37,7 @@ final class ExtrasTableViewCell: UITableViewCell {
         let button = UIButton()
         button.setTitle("₽", for: .normal)
         button.titleLabel?.font = AppConstants.Fonts.bold19
-        button.backgroundColor = AppConstants.Colors.detailDarkGray
+        button.backgroundColor = AppConstants.Colors.darkGray
         button.titleLabel?.textColor = AppConstants.Colors.white
         button.layer.cornerRadius = 12
         button.clipsToBounds = true
