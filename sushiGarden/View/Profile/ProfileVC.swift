@@ -9,6 +9,8 @@ import UIKit
 
 final class ProfileVC: BaseViewController {
 
+    var navManager: Coordinator?
+
     let data: [ProfileTableModel] = [
         ProfileTableModel(name: "Профиль", imageName: "user"),
         ProfileTableModel(name: "Карты", imageName: "card")
@@ -33,7 +35,7 @@ final class ProfileVC: BaseViewController {
         table.dataSource = self
         table.register(ProfileTableViewCell.self, forCellReuseIdentifier: ProfileTableViewCell.identifier)
         table.backgroundColor = .clear
-        table.allowsSelection = false
+        table.isScrollEnabled = false
         return table
     }()
 
@@ -41,7 +43,22 @@ final class ProfileVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigation()
         setupUI()
+    }
+
+    private func setupNavigation() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = AppConstants.Colors.background
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
+        // Убираем слово "back" со следующего экрана
+        navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
+        //  Меняем цвет шеврона back
+        navigationController?.navigationBar.tintColor = .white
     }
 
     private func setupUI() {
@@ -58,7 +75,7 @@ final class ProfileVC: BaseViewController {
         view.addSubViews([contentStack, leaveButton])
 
         NSLayoutConstraint.activate([
-            contentStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            contentStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 70),
             contentStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             contentStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
 
@@ -84,11 +101,17 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        55
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ProfileTableViewCell
+        let cellTitle = cell.nameLabel.text
+        switch cellTitle {
+        case "Профиль": navManager?.goToScreen(.editProfile)
+        case "Карты": navManager?.goToScreen(.editCards)
+        default: break
+        }
     }
-}
 
+}
 
 //MARK: - SwiftUI
 import SwiftUI

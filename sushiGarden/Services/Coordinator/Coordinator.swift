@@ -8,8 +8,8 @@
 import UIKit
 
 enum NavigationScreens {
-    case EditProfile
-    case EditCards
+    case editProfile
+    case editCards
 }
 
 final class Coordinator {
@@ -24,10 +24,10 @@ final class Coordinator {
         var viewController: UIViewController?
 
         switch screen {
-        case .EditProfile:
-            viewController = ScreenFactory.createScreen(.EditProfile)
+        case .editProfile:
+            viewController = ScreenFactory.createScreen(.editProfile)
             navController?.pushViewController(viewController!, animated: true)
-        case .EditCards:
+        case .editCards:
             viewController = EditCardsVC()
             navController?.pushViewController(viewController!, animated: true)
         }

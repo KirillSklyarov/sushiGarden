@@ -20,11 +20,11 @@ final class TabBarController: UITabBarController {
         tabBar.isTranslucent = false
         tabBar.barTintColor = AppConstants.Colors.background
 
-        let catalogue = UINavigationController(rootViewController: CatalogueVC())
-        let promo = UINavigationController(rootViewController: PromoVC())
-        let orders = UINavigationController(rootViewController: OrdersVC())
-        let cart = UINavigationController(rootViewController: CartVC())
-        let profile = UINavigationController(rootViewController: ProfileVC())
+        let catalogue = ScreenFactory.createScreen(.catalogue)
+        let promo = ScreenFactory.createScreen(.promo)
+        let orders = ScreenFactory.createScreen(.orders)
+        let cart = ScreenFactory.createScreen(.cart)
+        let profile = ScreenFactory.createScreen(.profile)
 
         let catalogueImage = UIImage(named: "catalogue")
         let promoImage = UIImage(named: "promo")

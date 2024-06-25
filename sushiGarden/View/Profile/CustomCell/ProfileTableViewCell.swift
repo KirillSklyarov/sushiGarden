@@ -18,7 +18,7 @@ final class ProfileTableViewCell: UITableViewCell {
         return imageView
     }()
 
-    private lazy var nameLabel: UILabel = {
+    lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = AppConstants.Fonts.bold14
         label.textColor = AppConstants.Colors.white
@@ -37,6 +37,7 @@ final class ProfileTableViewCell: UITableViewCell {
 
     private func setupCell() {
         backgroundColor = .clear
+        selectionStyle = .none
 
         let image = UIImage(named: "appChevron")
         let chevronImage = UIImageView(image: image)
@@ -54,9 +55,6 @@ final class ProfileTableViewCell: UITableViewCell {
             contentStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             contentStack.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
-
-//            extraImage.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 28/430),
-//            priceButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 83/430),
         ])
     }
 
