@@ -48,4 +48,17 @@ struct AppConstants {
 
 
     }
+
+    struct Firestore {
+
+        struct Collections {
+            static let user = "user"
+        }
+
+        struct UserData {
+            static let name = "name"
+            static let email = "email"
+        }
+
+    }
 }

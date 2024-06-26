@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct UserData {
-    let name: String
-    let email: String
+struct User {
+    var name: String
+    var email: String
+    var password: String
 }

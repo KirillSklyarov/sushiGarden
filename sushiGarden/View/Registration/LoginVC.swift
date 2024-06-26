@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 final class LoginVC: BaseViewController {
 
@@ -67,11 +68,11 @@ final class LoginVC: BaseViewController {
             let password = passwordStack.textFieldText
             loginUser(withEmail: email, password: password)
         } else {
-            ProgressIndicator.succeed()
             let emptyFields = emptyFields()
             self.showAlert(emptyFields: emptyFields)
         }
     }
+
 
     private func emptyFields() -> String {
         var array = [String]()

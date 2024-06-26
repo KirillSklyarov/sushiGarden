@@ -18,15 +18,20 @@ final class WhiteBoldTitleLabel: UILabel {
 
     init(title: String) {
         super.init(frame: .zero)
-        setupLabel(title)
+        setupLabel()
+        updateTitle(title)
+    }
+
+    init() {
+        super.init(frame: .zero)
+        setupLabel()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupLabel(_ title: String) {
-        addressTitleLabel.text = title
+    private func setupLabel() {
         addSubViews([addressTitleLabel])
 
         NSLayoutConstraint.activate([
@@ -35,5 +40,9 @@ final class WhiteBoldTitleLabel: UILabel {
             addressTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             addressTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+
+    func updateTitle(_ title: String) {
+        addressTitleLabel.text = title
     }
 }

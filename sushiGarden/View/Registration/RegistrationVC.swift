@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 
 final class RegistrationVC: BaseViewController {
 
@@ -43,7 +43,8 @@ final class RegistrationVC: BaseViewController {
         return view
     }()
 
-    // MARK: - UI Properties
+    // MARK: - Other Properties
+    private let fireStore = Firestore.firestore()
     var coordinator: Coordinator?
 
     // MARK: - Life cycle
@@ -55,9 +56,7 @@ final class RegistrationVC: BaseViewController {
     // MARK: - IB Action
     @objc private func enterButtonTapped(_ sender: UIButton) {
         if isAllFieldsFilled() {
-            let email = emailStack.textFieldText
-            let password = passwordStack.textFieldText
-            registration(withEmail: email, password: password)
+            registerUserAndSaveData()
         } else {
             let emptyFields = emptyFields()
             self.showAlert(emptyFields: emptyFields)
@@ -86,17 +85,44 @@ final class RegistrationVC: BaseViewController {
     }
 
     // MARK: - Private methods
-    private func registration(withEmail: String, password: String) {
-        Auth.auth().createUser(withEmail: withEmail, password: password) { [weak self] (authResult, error) in
+    private func registerUserAndSaveData() {
+        let currentUser = User(name: nameStack.textFieldText,
+                               email: emailStack.textFieldText,
+                               password: passwordStack.textFieldText)
+        registration(currentUser)
+    }
+
+    private func registration(_ user: User) {
+        ProgressIndicator.show()
+        Auth.auth().createUser(withEmail: user.email, password: user.password) { [weak self] (authResult, error) in
             guard let self else { return }
             if let error = error {
                 print(error.localizedDescription)
+                showErrorAlert(error: error.localizedDescription)
             } else {
-                guard let user = authResult?.user else { print("Jopa"); return }
-                print("Пользователь \(withEmail) успешно зарегистрирован. Его ID: \(user.uid)")
-                coordinator?.changeRootVCToTabBar()
+                ProgressIndicator.succeed()
+                guard let userData = authResult?.user else { print("Jopa"); return }
+                print("Пользователь \(user.email) успешно зарегистрирован. Его ID: \(userData.uid)")
+                saveUserToFirebase(user)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.coordinator?.changeRootVCToTabBar()
+                }
             }
         }
+    }
+
+    private func saveUserToFirebase(_ user: User) {
+        fireStore.collection(AppConstants.Firestore.Collections.user).addDocument(
+            data: [AppConstants.Firestore.UserData.name : user.name,
+                   AppConstants.Firestore.UserData.email : user.email
+                  ]) { [weak self] error in
+                      guard self != nil else { return }
+                      if let error {
+                          print(error.localizedDescription)
+                      } else {
+                          print("User saved successfully")
+                      }
+                  }
     }
 
     private func isAllFieldsFilled() -> Bool {
@@ -111,9 +137,6 @@ final class RegistrationVC: BaseViewController {
         buttonsStack.axis = .vertical
         buttonsStack.spacing = 0
 
-//        isHaveAccount.layer.borderWidth = 1
-//        isHaveAccount.layer.borderColor = UIColor.black.cgColor
-
         let contentStack = UIStackView(arrangedSubviews: [nameStack, emailStack, passwordStack, agreementStack, buttonsStack])
         contentStack.axis = .vertical
         contentStack.spacing = 30
@@ -124,12 +147,7 @@ final class RegistrationVC: BaseViewController {
             contentStack.topAnchor.constraint(equalTo: registrationView.topAnchor, constant: 50),
             contentStack.leadingAnchor.constraint(equalTo: registrationView.leadingAnchor, constant: 28),
             contentStack.trailingAnchor.constraint(equalTo: registrationView.trailingAnchor, constant: -20),
-            contentStack.bottomAnchor.constraint(equalTo: registrationView.bottomAnchor, constant: -30),
-
-//            isHaveAccount.topAnchor.constraint(equalTo: enterButton.bottomAnchor, constant: 20),
-
-
-
+            contentStack.bottomAnchor.constraint(equalTo: registrationView.bottomAnchor, constant: -30)
         ])
 
         view.addSubViews([titleLabel, registrationView])

@@ -18,15 +18,20 @@ final class GrayRegularLabel: UILabel {
 
     init(title: String) {
         super.init(frame: .zero)
-        setupLabel(title)
+        setupLabel()
+        updateTitle(title)
+    }
+
+    init() {
+        super.init(frame: .zero)
+        setupLabel()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupLabel(_ title: String) {
-        titleLabel.text = title
+    private func setupLabel() {
         addSubViews([titleLabel])
 
         NSLayoutConstraint.activate([
@@ -35,5 +40,9 @@ final class GrayRegularLabel: UILabel {
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+
+    func updateTitle(_ title: String) {
+        titleLabel.text = title
     }
 }

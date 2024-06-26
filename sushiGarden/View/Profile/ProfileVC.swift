@@ -6,29 +6,20 @@
 //
 
 import UIKit
+import Firebase
 
 final class ProfileVC: BaseViewController {
-
-    var navManager: Coordinator?
-
-    let data: [ProfileTableModel] = [
-        ProfileTableModel(name: "Профиль", imageName: "user"),
-        ProfileTableModel(name: "Карты", imageName: "card")
-    ]
-
-    let ordersID = ["111", "222", "333"]
-
+    
+    // MARK: - UI Properties
     private lazy var profilePhoto: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "photo"))
         imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         return imageView
     }()
-    private lazy var nameLabel = WhiteBoldTitleLabel(title: "Александр Новиков")
-    private lazy var emailLabel = GrayRegularLabel(title: "anovikov@gmail.com")
-
+    private lazy var nameLabel = WhiteBoldTitleLabel()
+    private lazy var emailLabel = GrayRegularLabel()
     private lazy var ordersView = ProfileOrdersView(ordersID: ordersID)
-
     private lazy var profileCardsTable: UITableView = {
         let table = UITableView()
         table.delegate = self
@@ -38,13 +29,63 @@ final class ProfileVC: BaseViewController {
         table.isScrollEnabled = false
         return table
     }()
-
     private lazy var leaveButton = AppBlackButton()
 
+    // MARK: - Other Properties
+    var navManager: Coordinator?
+
+    let data: [ProfileTableModel] = [
+        ProfileTableModel(name: "Профиль", imageName: "user"),
+        ProfileTableModel(name: "Карты", imageName: "card")
+    ]
+
+    let ordersID = ["111", "222", "333"]
+
+    private let fireStore = Firestore.firestore()
+
+    var currentUser: User?
+
+    // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
         setupUI()
+        dataBinding()
+    }
+
+    // MARK: - Private methods
+    private func dataBinding() {
+        Task {
+            await loadDataFromFirebase()
+            updateUI()
+        }
+    }
+
+    private func updateUI() {
+        let name = currentUser?.name ?? "123"
+        let email = currentUser?.email ?? "123"
+        nameLabel.updateTitle(name)
+        emailLabel.updateTitle(email)
+    }
+
+    private func loadDataFromFirebase() async {
+        do {
+           let snapshot = try await fireStore.collection(AppConstants.Firestore.Collections.user).getDocuments()
+            for doc in snapshot.documents {
+                let data = doc.data()
+               guard let name = data[AppConstants.Firestore.UserData.name] as? String,
+                     let email = data[AppConstants.Firestore.UserData.email] as? String else { print("Casting problem"); return}
+                print("name \(name)")
+                print("email \(email)")
+
+                let loadedUser = User(name: name, email: email, password: "")
+                currentUser = loadedUser
+                print(currentUser)
+
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
     private func setupNavigation() {
@@ -88,6 +129,7 @@ final class ProfileVC: BaseViewController {
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         2

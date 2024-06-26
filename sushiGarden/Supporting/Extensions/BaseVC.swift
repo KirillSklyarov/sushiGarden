@@ -20,4 +20,11 @@ class BaseViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true)
     }
+
+    func showErrorAlert(error: String) {
+        let alert = UIAlertController(title: "Ошибка", message: error, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Отменить", style: .cancel)
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
 }
