@@ -34,9 +34,9 @@ final class RegistrationStackView: UIStackView {
         return field
     }()
 
-    init(name: String, placeholder: String) {
+    init(name: String, placeholder: String, autocapitalization: UITextAutocapitalizationType = .sentences) {
         super.init(frame: .zero)
-        setupFields(name: name, placeholder: placeholder)
+        setupFields(name: name, placeholder: placeholder, autocapitalization: autocapitalization)
         setupStackView()
     }
     
@@ -45,12 +45,13 @@ final class RegistrationStackView: UIStackView {
         setupStackView()
     }
 
-    private func setupFields(name: String, placeholder: String) {
+    private func setupFields(name: String, placeholder: String, autocapitalization: UITextAutocapitalizationType = .sentences) {
         headerLabel.text = name
         textField.placeholder = placeholder
         if name == "Пароль" {
             textField.isSecureTextEntry = true
         }
+        textField.autocapitalizationType = autocapitalization
     }
 
     private func setupStackView() {

@@ -6,11 +6,11 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
+import Firebase
 
 final class LoginVC: BaseViewController {
 
+    // MARK: - UI Properties
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Войти"
@@ -26,8 +26,8 @@ final class LoginVC: BaseViewController {
         view.clipsToBounds = true
         return view
     } ()
-    let emailStack = RegistrationStackView(name: "Почта", placeholder: "example@gmail.com")
-    let passwordStack = RegistrationStackView(name: "Пароль", placeholder: "**********")
+    private lazy var emailStack = RegistrationStackView(name: "Почта", placeholder: "example@gmail.com")
+    private lazy var passwordStack = RegistrationStackView(name: "Пароль", placeholder: "**********")
     private lazy var enterButton: AppRedButton = {
         let button = AppRedButton(title: "Войти".uppercased(), height: CGFloat(71))
         button.addTarget(self, action: #selector(enterButtonTapped), for: .touchUpInside)
@@ -41,9 +41,12 @@ final class LoginVC: BaseViewController {
         return view
     }()
 
-    // MARK: - UI Properties
+    // MARK: - Other Properties
     var coordinator: Coordinator?
 
+    private let fireStore = Firestore.firestore()
+
+    // MARK: - Init
     init(coordinator: Coordinator? = nil) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
@@ -53,18 +56,20 @@ final class LoginVC: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
 
+    // MARK: - IB Action
     @objc private func haveAccountButtonTapped(_ sender: UITapGestureRecognizer) {
         dismiss(animated: true)
     }
 
     @objc private func enterButtonTapped(_ sender: UIButton) {
         if isAllFieldsFilled() {
-            let email = emailStack.textFieldText
+            let email = emailStack.textFieldText.lowercased()
             let password = passwordStack.textFieldText
             loginUser(withEmail: email, password: password)
         } else {
@@ -73,7 +78,7 @@ final class LoginVC: BaseViewController {
         }
     }
 
-
+    // MARK: - Private methods
     private func emptyFields() -> String {
         var array = [String]()
         let stacks = [emailStack, passwordStack]
@@ -98,14 +103,46 @@ final class LoginVC: BaseViewController {
             guard let self else { print("Aauuch"); return }
             if let error {
                 print("Failed to login user: \(error.localizedDescription)")
+                showErrorAlert(error: error.localizedDescription)
+                ProgressIndicator.dismiss()
             } else {
+                guard let userID = AuthDataResult?.user.uid else { print("4"); return }
+
+                Task{
+                    await self.loadDataFromFirebase(userID: userID)
+                }
+
                 ProgressIndicator.succeed()
                 print("User logged in successfully")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.coordinator?.changeRootVCToTabBar()
+                    self.coordinator?.changeRootVC(to: .tabBarController)
                 }
             }
         }
+    }
+
+    private func loadDataFromFirebase(userID: String) async {
+        do {
+            print("userID \(userID)")
+            let snapshot = try await fireStore.collection(AppConstants.Firestore.Collections.user)
+                .document(userID)
+                .getDocument()
+            guard let data = snapshot.data() else { print("123123123"); return }
+            updateCurrentUser(with: data)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    private func updateCurrentUser(with data: [String : Any]) {
+        guard let name = data[AppConstants.Firestore.UserData.name] as? String,
+              let email = data[AppConstants.Firestore.UserData.email] as? String,
+              let id = data[AppConstants.Firestore.UserData.id] as? String else { print("Casting problem"); return}
+
+        let loadedUser = User(userID: id, name: name, email: email)
+        Storage.shared.currentUser = loadedUser
+        //        print("loadedUser \(loadedUser)")
+//        print("Storage.shared.currentUser \(Storage.shared.currentUser)")
     }
 
     private func setupUI() {

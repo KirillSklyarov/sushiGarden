@@ -55,8 +55,8 @@ final class ScreenFactory {
         case .profile:
             let profileVC = ProfileVC()
             let navController = UINavigationController(rootViewController: profileVC)
-            let navManager = Coordinator(navController: navController)
-            profileVC.navManager = navManager
+            let coordinator = Coordinator(navController: navController)
+            profileVC.coordinator = coordinator
             return navController
         case .editProfile:
             return EditProfileVC()

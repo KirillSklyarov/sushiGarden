@@ -29,10 +29,16 @@ final class ProfileVC: BaseViewController {
         table.isScrollEnabled = false
         return table
     }()
-    private lazy var leaveButton = AppBlackButton()
+    private lazy var leaveButton: AppBlackLabel = {
+        let label = AppBlackLabel()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(logOutButtonTapped))
+        label.addGestureRecognizer(tap)
+        label.backgroundColor = .white
+        return label
+    }()
 
     // MARK: - Other Properties
-    var navManager: Coordinator?
+    var coordinator: Coordinator?
 
     let data: [ProfileTableModel] = [
         ProfileTableModel(name: "Профиль", imageName: "user"),
@@ -42,50 +48,38 @@ final class ProfileVC: BaseViewController {
     let ordersID = ["111", "222", "333"]
 
     private let fireStore = Firestore.firestore()
+    private let fireAuth = Auth.auth()
+    private let storage = Storage.shared
 
-    var currentUser: User?
+    // MARK: - IB Actions
+    @objc private func logOutButtonTapped(sender: UITapGestureRecognizer) {
+        logOutUser()
+    }
 
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
         setupUI()
-        dataBinding()
+        updateUI()
     }
 
     // MARK: - Private methods
-    private func dataBinding() {
-        Task {
-            await loadDataFromFirebase()
-            updateUI()
+    private func logOutUser() {
+        do {
+            try fireAuth.signOut()
+            coordinator?.changeRootVC(to: .registration)
+        } catch  {
+            print(error.localizedDescription)
         }
     }
 
     private func updateUI() {
-        let name = currentUser?.name ?? "123"
-        let email = currentUser?.email ?? "123"
+        guard let currentUser = Storage.shared.currentUser else { print("2"); return }
+        let name = currentUser.name
+        let email = currentUser.email
         nameLabel.updateTitle(name)
         emailLabel.updateTitle(email)
-    }
-
-    private func loadDataFromFirebase() async {
-        do {
-           let snapshot = try await fireStore.collection(AppConstants.Firestore.Collections.user).getDocuments()
-            for doc in snapshot.documents {
-                let data = doc.data()
-               guard let name = data[AppConstants.Firestore.UserData.name] as? String,
-                     let email = data[AppConstants.Firestore.UserData.email] as? String else { print("Casting problem"); return}
-                print("name \(name)")
-                print("email \(email)")
-
-                let loadedUser = User(name: name, email: email, password: "")
-                currentUser = loadedUser
-                print(currentUser)
-
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
     }
 
     private func setupNavigation() {
@@ -147,8 +141,8 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.cellForRow(at: indexPath) as! ProfileTableViewCell
         let cellTitle = cell.nameLabel.text
         switch cellTitle {
-        case "Профиль": navManager?.goToScreen(.editProfile)
-        case "Карты": navManager?.goToScreen(.editCards)
+        case "Профиль": coordinator?.goToScreen(.editProfile)
+        case "Карты": coordinator?.goToScreen(.editCards)
         default: break
         }
     }

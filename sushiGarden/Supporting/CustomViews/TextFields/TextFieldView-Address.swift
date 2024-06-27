@@ -9,7 +9,8 @@ import UIKit
 
 final class AddressTextFieldView: UIView {
 
-    private func setupAddressTextField(placeholderText: String) -> UITextField {
+
+    private lazy var addressTextField: UITextField = {
         let field = UITextField()
         field.font = AppConstants.Fonts.bold16
         field.textColor = AppConstants.Colors.white
@@ -17,7 +18,7 @@ final class AddressTextFieldView: UIView {
         field.delegate = self
 
         // Тут настраиваем кастомный плейхолдер
-        let placeholderText = placeholderText
+        let placeholderText = ""
         let placeholderColor = AppConstants.Colors.darkGray
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: placeholderColor,
@@ -25,7 +26,8 @@ final class AddressTextFieldView: UIView {
         ]
         field.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: attributes)
         return field
-    }
+    }()
+
 
     private lazy var lineView: UIView = {
         let line = UIView()
@@ -44,7 +46,8 @@ final class AddressTextFieldView: UIView {
     }
 
     func setupView(placeholderText: String) {
-        let addressTextField = setupAddressTextField(placeholderText: placeholderText)
+        addressTextField.placeholder = placeholderText
+
         let contentStack = UIStackView(arrangedSubviews: [addressTextField, lineView])
         contentStack.axis = .vertical
         contentStack.spacing = 6
@@ -56,6 +59,10 @@ final class AddressTextFieldView: UIView {
             contentStack.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentStack.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+
+    func updateTitle(_ text: String) {
+        addressTextField.text = text
     }
 }
 

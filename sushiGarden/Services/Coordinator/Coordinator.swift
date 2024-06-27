@@ -47,13 +47,13 @@ final class Coordinator {
         }
     }
 
-    func changeRootVCToTabBar() {
-        let tabbarVC = ScreenFactory.createScreen(.tabBarController)
+    func changeRootVC(to screen: Screens) {
+        let newRootVC = ScreenFactory.createScreen(screen)
 
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let sceneDelegate = windowScene.delegate as? SceneDelegate
         else { print("Smth's going wrong"); return }
 
-        sceneDelegate.window?.rootViewController = tabbarVC
+        sceneDelegate.window?.rootViewController = newRootVC
     }
 }

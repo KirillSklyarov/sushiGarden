@@ -28,7 +28,7 @@
 		734A5C902C29EF5B000F93E7 /* ProfileOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C8F2C29EF5B000F93E7 /* ProfileOrdersView.swift */; };
 		734A5C932C29F0F0000F93E7 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C922C29F0F0000F93E7 /* ProfileTableViewCell.swift */; };
 		734A5C952C29F263000F93E7 /* ProfileTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C942C29F263000F93E7 /* ProfileTableModel.swift */; };
-		734A5C972C2A04A5000F93E7 /* AppBlackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C962C2A04A5000F93E7 /* AppBlackButton.swift */; };
+		734A5C972C2A04A5000F93E7 /* AppBlackLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A5C962C2A04A5000F93E7 /* AppBlackLabel.swift */; };
 		7377FE572C284D86002CB450 /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377FE562C284D86002CB450 /* HeaderTableView.swift */; };
 		7377FE592C285941002CB450 /* MakeOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377FE582C285941002CB450 /* MakeOrderView.swift */; };
 		7377FE5B2C287F3D002CB450 /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377FE5A2C287F3D002CB450 /* AddressVC.swift */; };
@@ -42,6 +42,7 @@
 		73A29BF72C2B00C000F87ABA /* AgreementStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A29BF62C2B00C000F87ABA /* AgreementStack.swift */; };
 		73A29BFD2C2B490300F87ABA /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 73A29BFC2C2B490300F87ABA /* ProgressHUD */; };
 		73A29C002C2B492D00F87ABA /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A29BFF2C2B492D00F87ABA /* ProgressIndicator.swift */; };
+		73A29C042C2DA12000F87ABA /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A29C032C2DA11F00F87ABA /* Storage.swift */; };
 		73D989C52C2423950086484B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C42C2423950086484B /* AppDelegate.swift */; };
 		73D989C72C2423950086484B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C62C2423950086484B /* SceneDelegate.swift */; };
 		73D989C92C2423950086484B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D989C82C2423950086484B /* TabBarController.swift */; };
@@ -88,7 +89,7 @@
 		734A5C8F2C29EF5B000F93E7 /* ProfileOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrdersView.swift; sourceTree = "<group>"; };
 		734A5C922C29F0F0000F93E7 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		734A5C942C29F263000F93E7 /* ProfileTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableModel.swift; sourceTree = "<group>"; };
-		734A5C962C2A04A5000F93E7 /* AppBlackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBlackButton.swift; sourceTree = "<group>"; };
+		734A5C962C2A04A5000F93E7 /* AppBlackLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBlackLabel.swift; sourceTree = "<group>"; };
 		7377FE562C284D86002CB450 /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
 		7377FE582C285941002CB450 /* MakeOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderView.swift; sourceTree = "<group>"; };
 		7377FE5A2C287F3D002CB450 /* AddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVC.swift; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		73A29BF32C2AFB2600F87ABA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		73A29BF62C2B00C000F87ABA /* AgreementStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementStack.swift; sourceTree = "<group>"; };
 		73A29BFF2C2B492D00F87ABA /* ProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
+		73A29C032C2DA11F00F87ABA /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		73D989C12C2423950086484B /* sushiGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sushiGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73D989C42C2423950086484B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73D989C62C2423950086484B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				734A5C8B2C29DC1B000F93E7 /* AppRedButton.swift */,
-				734A5C962C2A04A5000F93E7 /* AppBlackButton.swift */,
+				734A5C962C2A04A5000F93E7 /* AppBlackLabel.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -214,6 +216,23 @@
 				73A29BFF2C2B492D00F87ABA /* ProgressIndicator.swift */,
 			);
 			path = ProgressIndicator;
+			sourceTree = "<group>";
+		};
+		73A29C012C2D76A700F87ABA /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				73ED7FD62C2438D600F84EBC /* RegistrationStackView.swift */,
+				734A5C7F2C296E36000F93E7 /* TextFieldView-Address.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		73A29C022C2DA10D00F87ABA /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				73A29C032C2DA11F00F87ABA /* Storage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		73D989B82C2423950086484B = {
@@ -299,6 +318,7 @@
 		73D989DC2C2424460086484B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				73A29C022C2DA10D00F87ABA /* Storage */,
 				73A29BFE2C2B490D00F87ABA /* ProgressIndicator */,
 				73A29BE82C2AC14100F87ABA /* Coordinator */,
 				73D989DD2C2424510086484B /* ScreenFactory */,
@@ -352,11 +372,11 @@
 		73ED7FD52C2438AB00F84EBC /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				73A29C012C2D76A700F87ABA /* TextFields */,
 				73A29BF52C2B00B200F87ABA /* Stacks */,
 				734A5C8A2C29DC10000F93E7 /* Buttons */,
 				734A5C812C29745F000F93E7 /* Labels */,
 				7377FE582C285941002CB450 /* MakeOrderView.swift */,
-				73ED7FD62C2438D600F84EBC /* RegistrationStackView.swift */,
 				73ED7FDA2C247E1800F84EBC /* CustomButtonStack.swift */,
 				73ED7FEC2C256A1E00F84EBC /* AddressHeaderForCatalogueVC.swift */,
 				73086BEB2C257BCD0052472C /* UpperCollectionViewCell.swift */,
@@ -367,7 +387,6 @@
 				73086BF82C27097C0052472C /* HeaderCollectionReusableView.swift */,
 				7377FE562C284D86002CB450 /* HeaderTableView.swift */,
 				73086BFD2C2801410052472C /* ExtrasTableViewCell.swift */,
-				734A5C7F2C296E36000F93E7 /* TextFieldView-Address.swift */,
 				734A5C8F2C29EF5B000F93E7 /* ProfileOrdersView.swift */,
 			);
 			path = CustomViews;
@@ -525,7 +544,7 @@
 				734A5C952C29F263000F93E7 /* ProfileTableModel.swift in Sources */,
 				734A5C932C29F0F0000F93E7 /* ProfileTableViewCell.swift in Sources */,
 				73A29C002C2B492D00F87ABA /* ProgressIndicator.swift in Sources */,
-				734A5C972C2A04A5000F93E7 /* AppBlackButton.swift in Sources */,
+				734A5C972C2A04A5000F93E7 /* AppBlackLabel.swift in Sources */,
 				73ED7FD42C24321B00F84EBC /* UIView+Ext.swift in Sources */,
 				73086C002C280A010052472C /* SushiDetail.swift in Sources */,
 				73A29BE52C2AB38300F87ABA /* EditCardsVC.swift in Sources */,
@@ -538,6 +557,7 @@
 				73086BF72C26C17A0052472C /* CustomStepper.swift in Sources */,
 				73D989C52C2423950086484B /* AppDelegate.swift in Sources */,
 				734A5C902C29EF5B000F93E7 /* ProfileOrdersView.swift in Sources */,
+				73A29C042C2DA12000F87ABA /* Storage.swift in Sources */,
 				734A5C802C296E36000F93E7 /* TextFieldView-Address.swift in Sources */,
 				734A5C8C2C29DC1B000F93E7 /* AppRedButton.swift in Sources */,
 				73086BFE2C2801410052472C /* ExtrasTableViewCell.swift in Sources */,

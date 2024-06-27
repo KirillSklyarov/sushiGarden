@@ -56,6 +56,7 @@ struct AppConstants {
         }
 
         struct UserData {
+            static let id = "id"
             static let name = "name"
             static let email = "email"
         }

@@ -11,23 +11,8 @@ import Firebase
 final class RegistrationVC: BaseViewController {
 
     // MARK: - UI Properties
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Регистрация"
-        label.font = AppConstants.Fonts.bold34
-        label.textColor = AppConstants.Colors.white
-        return label
-    }()
-    private lazy var registrationView: UIView = {
-        let view = UIView()
-        view.backgroundColor = AppConstants.Colors.white
-        view.layer.cornerRadius = 27
-        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        view.clipsToBounds = true
-        return view
-    } ()
     private lazy var nameStack = RegistrationStackView(name: "Имя", placeholder: "Александр")
-    private lazy var emailStack = RegistrationStackView(name: "Почта", placeholder: "example@gmail.com")
+    private lazy var emailStack = RegistrationStackView(name: "Почта", placeholder: "example@gmail.com", autocapitalization: .none)
     private lazy var passwordStack = RegistrationStackView(name: "Пароль", placeholder: "**********")
     private lazy var agreementStack = AgreementStack()
     private lazy var enterButton: AppRedButton = {
@@ -86,43 +71,49 @@ final class RegistrationVC: BaseViewController {
 
     // MARK: - Private methods
     private func registerUserAndSaveData() {
-        let currentUser = User(name: nameStack.textFieldText,
-                               email: emailStack.textFieldText,
-                               password: passwordStack.textFieldText)
-        registration(currentUser)
+        let email = emailStack.textFieldText.lowercased()
+        let name = nameStack.textFieldText
+        let password = passwordStack.textFieldText
+
+        registration(withEmail: email, password: password, name: name)
     }
 
-    private func registration(_ user: User) {
+    private func registration(withEmail: String, password: String, name: String) {
         ProgressIndicator.show()
-        Auth.auth().createUser(withEmail: user.email, password: user.password) { [weak self] (authResult, error) in
+        Auth.auth().createUser(withEmail: withEmail, password: password) { [weak self] (authResult, error) in
             guard let self else { return }
             if let error = error {
                 print(error.localizedDescription)
                 showErrorAlert(error: error.localizedDescription)
             } else {
                 ProgressIndicator.succeed()
-                guard let userData = authResult?.user else { print("Jopa"); return }
-                print("Пользователь \(user.email) успешно зарегистрирован. Его ID: \(userData.uid)")
-                saveUserToFirebase(user)
+                guard let userId = authResult?.user.uid else { print("Jopa"); return }
+                print("Пользователь \(withEmail) успешно зарегистрирован. Его ID: \(userId)")
+                let currentUser = User(userID: userId, name: name, email: withEmail)
+                addUserToFirebase(currentUser)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    self.coordinator?.changeRootVCToTabBar()
+                    self.coordinator?.changeRootVC(to: .tabBarController)
                 }
             }
         }
     }
 
-    private func saveUserToFirebase(_ user: User) {
-        fireStore.collection(AppConstants.Firestore.Collections.user).addDocument(
-            data: [AppConstants.Firestore.UserData.name : user.name,
-                   AppConstants.Firestore.UserData.email : user.email
-                  ]) { [weak self] error in
-                      guard self != nil else { return }
-                      if let error {
-                          print(error.localizedDescription)
-                      } else {
-                          print("User saved successfully")
-                      }
-                  }
+    private func addUserToFirebase(_ user: User) {
+        fireStore.collection(AppConstants.Firestore.Collections.user)
+            .document(user.userID)
+            .setData(
+                [AppConstants.Firestore.UserData.id : user.userID,
+                 AppConstants.Firestore.UserData.name : user.name,
+                 AppConstants.Firestore.UserData.email : user.email
+                ])
+        { [weak self] error in
+            guard self != nil else { return }
+            if let error {
+                print(error.localizedDescription)
+            } else {
+                print("User saved successfully")
+            }
+        }
     }
 
     private func isAllFieldsFilled() -> Bool {
@@ -133,6 +124,22 @@ final class RegistrationVC: BaseViewController {
     }
 
     private func setupUI() {
+        lazy var titleLabel: UILabel = {
+            let label = UILabel()
+            label.text = "Регистрация"
+            label.font = AppConstants.Fonts.bold34
+            label.textColor = AppConstants.Colors.white
+            return label
+        }()
+        lazy var registrationView: UIView = {
+            let view = UIView()
+            view.backgroundColor = AppConstants.Colors.white
+            view.layer.cornerRadius = 27
+            view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            view.clipsToBounds = true
+            return view
+        } ()
+
         let buttonsStack = UIStackView(arrangedSubviews: [enterButton, isHaveAccount])
         buttonsStack.axis = .vertical
         buttonsStack.spacing = 0

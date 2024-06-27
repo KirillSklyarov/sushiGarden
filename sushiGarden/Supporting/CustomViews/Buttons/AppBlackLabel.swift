@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AppBlackButton: UILabel {
+final class AppBlackLabel: UILabel {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,6 +36,7 @@ final class AppBlackButton: UILabel {
             stack.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
 
+        isUserInteractionEnabled = true
         layer.cornerRadius = 32
         clipsToBounds = true
         layer.borderColor = AppConstants.Colors.white.cgColor
