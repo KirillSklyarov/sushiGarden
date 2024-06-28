@@ -7,10 +7,11 @@
 
 import UIKit
 
-final class AddressTextFieldView: UIView {
+final class TextFieldAndLineView: UIView {
 
+    var text = ""
 
-    private lazy var addressTextField: UITextField = {
+    private lazy var textField: UITextField = {
         let field = UITextField()
         field.font = AppConstants.Fonts.bold16
         field.textColor = AppConstants.Colors.white
@@ -46,9 +47,9 @@ final class AddressTextFieldView: UIView {
     }
 
     func setupView(placeholderText: String) {
-        addressTextField.placeholder = placeholderText
+        textField.placeholder = placeholderText
 
-        let contentStack = UIStackView(arrangedSubviews: [addressTextField, lineView])
+        let contentStack = UIStackView(arrangedSubviews: [textField, lineView])
         contentStack.axis = .vertical
         contentStack.spacing = 6
 
@@ -62,11 +63,17 @@ final class AddressTextFieldView: UIView {
     }
 
     func updateTitle(_ text: String) {
-        addressTextField.text = text
+        textField.text = text
+    }
+
+    func resign() {
+        textField.resignFirstResponder()
     }
 }
 
-extension AddressTextFieldView: UITextFieldDelegate {
-
+extension TextFieldAndLineView: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        text = textField.text ?? ""
+    }
 }
 

@@ -13,17 +13,17 @@ final class AddressVC: BaseViewController {
     private lazy var personalTitleLabel = WhiteBoldTitleLabel(title: "Кому")
     private lazy var paymentTitleLabel = WhiteBoldTitleLabel(title: "Оплата")
 
-    private lazy var streetTextField = AddressTextFieldView(placeholderText: "Город, улица")
-    private lazy var blockTextField = AddressTextFieldView(placeholderText: "Корпус")
-    private lazy var officeTextField = AddressTextFieldView(placeholderText: "Кв./ Офис")
-    private lazy var floorTextField = AddressTextFieldView(placeholderText: "Этаж")
-    private lazy var intercomTextField = AddressTextFieldView(placeholderText: "Домофон")
+    private lazy var streetTextField = TextFieldAndLineView(placeholderText: "Город, улица")
+    private lazy var blockTextField = TextFieldAndLineView(placeholderText: "Корпус")
+    private lazy var officeTextField = TextFieldAndLineView(placeholderText: "Кв./ Офис")
+    private lazy var floorTextField = TextFieldAndLineView(placeholderText: "Этаж")
+    private lazy var intercomTextField = TextFieldAndLineView(placeholderText: "Домофон")
     
-    private lazy var nameTextField = AddressTextFieldView(placeholderText: "Ваше имя")
-    private lazy var phoneTextField = AddressTextFieldView(placeholderText: "Телефон")
-    private lazy var emailTextField = AddressTextFieldView(placeholderText: "Почта")
+    private lazy var nameTextField = TextFieldAndLineView(placeholderText: "Ваше имя")
+    private lazy var phoneTextField = TextFieldAndLineView(placeholderText: "Телефон")
+    private lazy var emailTextField = TextFieldAndLineView(placeholderText: "Почта")
 
-    private lazy var paymentTextField = AddressTextFieldView(placeholderText: "")
+    private lazy var paymentTextField = TextFieldAndLineView(placeholderText: "")
 
     private lazy var orderSumLabel = AddressBillLabel(title: "Сумма заказа", sum: 1640)
     private lazy var deliverySumLabel = AddressBillLabel(title: "Доставка", sum: 76)
